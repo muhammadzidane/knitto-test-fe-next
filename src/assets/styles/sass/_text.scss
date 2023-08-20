@@ -1,0 +1,50 @@
+$text-sizes: (
+  xsmall: 11px,
+  small: 14px,
+  medium: $font-size-base,
+  large: 18px,
+  xlarge: 22px,
+  2xlarge: 24px,
+);
+
+$text-weights: (
+  normal: "Circular Light",
+  semibold: "Circular Book",
+  bold: "Circular Medium",
+  xbold: "Circular Bold",
+  2xbold: "Circular Black",
+);
+
+$text-aligns: (
+  center: center,
+  left: left,
+  right: right,
+);
+
+.text {
+  @each $size, $value in $text-sizes {
+    &--#{$size} {
+      font-size: $value;
+    }
+  }
+
+  @each $weight, $value in $text-weights {
+    &--#{$weight} {
+      font-family: $value, sans-serif;
+    }
+  }
+
+  @each $align, $value in $text-aligns {
+    &--#{$align} {
+      text-align: $value;
+    }
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--spacing-0 {
+    letter-spacing: 0;
+  }
+}
