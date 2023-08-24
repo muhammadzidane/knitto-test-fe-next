@@ -1,3 +1,5 @@
+"use client";
+
 // Interfaces
 import { skeleton, type IAppSkeletonProps } from "./cva";
 

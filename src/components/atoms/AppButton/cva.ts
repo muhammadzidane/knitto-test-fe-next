@@ -48,7 +48,7 @@ export interface IAppButtonProps extends VariantProps<typeof button> {
   /**
    * Variants attribute
    */
-  variant:
+  variant?:
     | "plain"
     | "primary"
     | "secondary"
@@ -60,7 +60,8 @@ export interface IAppButtonProps extends VariantProps<typeof button> {
     | "spotify"
     | "dark-1"
     | "dark-4"
-    | "gray-5";
+    | "gray-5"
+    | "blank";
 
   /**
    * Class default attribute
