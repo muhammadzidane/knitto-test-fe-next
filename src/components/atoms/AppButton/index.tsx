@@ -1,5 +1,7 @@
+"use client";
+
 // React
-import React from "react";
+import React, { useCallback } from "react";
 
 // Next
 import Image from "next/image";
@@ -13,16 +15,16 @@ import { button, type IAppButtonProps } from "./cva";
 const AppButton = ({
   children,
   className,
-  rounded,
+  rounded = "small",
   variant,
-  size,
+  size = "medium",
   disabled,
   block,
-  loading,
+  loading = false,
   width,
   height,
   icon,
-  type,
+  type = "button",
   onClick,
 }: IAppButtonProps) => {
   const buttonClassName = button({
@@ -39,16 +41,16 @@ const AppButton = ({
    *
    * @returns void
    */
-  // const onClickButton = useCallback(
-  //   (event: React.MouseEvent<HTMLButtonElement>): void => {
-  //     !loading && onClick?.(event);
-  //   },
-  //   [loading, onClick]
-  // );
+  const onClickButton = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>): void => {
+      !loading && onClick?.(event);
+    },
+    [loading, onClick]
+  );
 
   return (
     <button
-      onClick={onClick}
+      onClick={onClickButton}
       className={buttonClassName}
       style={{ width, height }}
       disabled={disabled}
@@ -73,13 +75,6 @@ const AppButton = ({
       <span>{children}</span>
     </button>
   );
-};
-
-AppButton.defaultProps = {
-  type: "button",
-  loading: false,
-  rounded: "small",
-  size: "medium",
 };
 
 export default AppButton;

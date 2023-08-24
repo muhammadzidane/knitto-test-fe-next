@@ -46,7 +46,24 @@ export interface IAppButtonProps extends VariantProps<typeof button> {
   children: string | React.ReactNode;
 
   /**
-   * Classname default attribute
+   * Variants attribute
+   */
+  variant:
+    | "plain"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "info"
+    | "warning"
+    | "facebook"
+    | "spotify"
+    | "dark-1"
+    | "dark-4"
+    | "gray-5";
+
+  /**
+   * Class default attribute
    */
   className?: string;
 

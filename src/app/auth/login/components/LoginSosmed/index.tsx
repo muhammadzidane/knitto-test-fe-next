@@ -11,7 +11,7 @@ const LoginSosmed = () => (
         variant="facebook"
         size="large"
         rounded="large"
-        icon="facebook-circle-white-24x24.svg"
+        icon="/svg/facebook-circle-white-24x24.svg"
       >
         CONTINUE WITH FACEBOOK
       </AppButton>
@@ -20,12 +20,17 @@ const LoginSosmed = () => (
         variant="dark-1"
         size="large"
         rounded="large"
-        icon="apple-white.svg"
+        icon="/svg/apple-white.svg"
       >
         CONTINUE WITH APPLE
       </AppButton>
 
-      <AppButton variant="blank" size="large" rounded="large" icon="google.svg">
+      <AppButton
+        variant="blank"
+        size="large"
+        rounded="large"
+        icon="/svg/google.svg"
+      >
         CONTINUE WITH GOOGLE
       </AppButton>
 

@@ -4,7 +4,11 @@
 
 const Navbar: React.FC = () => (
   <div className="login__navbar">
-    <img width="143px" src="/main-logo.svg" alt="Deskripsi gambar" />
+    <img
+      width="143px"
+      src="/images/main-logo-black-1.png"
+      alt="Deskripsi gambar"
+    />
   </div>
 );
 

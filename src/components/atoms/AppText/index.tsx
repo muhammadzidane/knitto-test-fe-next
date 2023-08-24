@@ -10,23 +10,13 @@ import { text, type IAppTextProps } from "./cva";
 const AppText = ({
   children,
   className,
-  size,
+  size = "medium",
   color,
-  weight,
-}: // onClick,
-IAppTextProps) => {
+  weight = "normal",
+}: IAppTextProps) => {
   const textClassName = text({ className, size, color, weight });
 
-  // const onClickText = useCallback((): void => {
-  //   onClick?.();
-  // }, [onClick]);
-
   return <div className={textClassName}>{children}</div>;
-};
-
-AppText.defaultProps = {
-  size: "medium",
-  weight: "normal",
 };
 
 export default AppText;

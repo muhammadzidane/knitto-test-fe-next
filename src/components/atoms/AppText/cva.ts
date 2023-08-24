@@ -83,9 +83,4 @@ export interface IAppTextProps extends VariantProps<typeof text> {
    * Weight of the text
    */
   weight?: "normal" | "bold" | "semibold" | "xbold" | "2xbold";
-
-  /**
-   * Handle click
-   */
-  onClick?: () => void;
 }
