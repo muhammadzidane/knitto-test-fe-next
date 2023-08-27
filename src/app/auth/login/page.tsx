@@ -1,4 +1,6 @@
-import { Content, Navbar, LoginForm, LoginSosmed } from "./components";
+"use client";
+
+import { Content, Navbar, LoginForm, LoginSosmed, SignUp } from "./components";
 
 const AuthLogin = () => (
   <div className="login">
@@ -6,7 +8,7 @@ const AuthLogin = () => (
     <Content>
       <LoginSosmed />
       <LoginForm />
-      {/* <SignUp /> */}
+      <SignUp />
     </Content>
   </div>
 );

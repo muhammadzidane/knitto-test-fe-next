@@ -8,19 +8,24 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 // Components
-import { AppButton, AppCheckBox, AppInput, AppText } from "@/components";
+import {
+  AppButton,
+  AppCheckBox,
+  AppInput,
+  AppText,
+} from "@/features/app/components";
 
 // Interfaces
-// import { type ILoginBody } from "@features/auth/redux/rtk/interfaces";
+import { type ILoginBody } from "@/features/auth/redux/rtk/interfaces";
 
 // // Custom hooks
-// import { useAuth } from "@/features/auth/hooks";
-// import { useAppDispatch } from "@/features/app/hooks";
-// import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
+import { useAuth } from "@/features/auth/hooks";
+import { useAppDispatch } from "@/features/app/hooks";
+import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
 
 const LoginForm: React.FC = () => {
-  // const dispatch = useAppDispatch();
-  // const { login, isLoadingLogin } = useAuth();
+  const dispatch = useAppDispatch();
+  const { login, isLoadingLogin } = useAuth();
 
   /**
    * @description On submit login form
@@ -30,19 +35,18 @@ const LoginForm: React.FC = () => {
    * @returns Promise<void>
    */
   const onSubmitForm = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async (values: any, { resetForm }: any): Promise<void> => {
-      console.log(resetForm);
-
+    async (
+      values: ILoginBody,
+      { resetForm }: { resetForm: () => void }
+    ): Promise<void> => {
       try {
-        console.log(values);
-        // const response = await login({ body: values }).unwrap();
-        // dispatch(authSetAuthenticatedUser(response));
+        const response = await login({ body: values }).unwrap();
+        dispatch(authSetAuthenticatedUser(response));
       } catch (_) {
         resetForm();
       }
     },
-    []
+    [dispatch, login]
   );
 
   // Validation Form
@@ -89,8 +93,7 @@ const LoginForm: React.FC = () => {
             <AppCheckBox label="Remember me" />
 
             <AppButton
-              // loading={isLoadingLogin}
-              loading={false}
+              loading={isLoadingLogin}
               type="submit"
               variant="spotify"
               width="121px"

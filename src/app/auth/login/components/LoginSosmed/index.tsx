@@ -1,8 +1,10 @@
+"use client";
+
 // React
 import React from "react";
 
 // Components
-import { AppButton, AppText } from "@/components";
+import { AppButton, AppText } from "@/features/app/components";
 
 const LoginSosmed = () => (
   <>

@@ -1,6 +1,5 @@
 // Components
-import { MainLayout } from "@/components/template";
-import { AppButton } from "@/components";
+import { MainLayout, AppButton } from "@/features/app/components";
 
 const Dashboard = () => (
   <MainLayout>
