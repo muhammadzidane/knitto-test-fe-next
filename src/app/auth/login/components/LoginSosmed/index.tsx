@@ -1,12 +1,10 @@
-"use client";
-
 // React
 import React from "react";
 
 // Components
 import { AppButton, AppText } from "@/features/app/components";
 
-const LoginSosmed = () => (
+const LoginSosmed: React.FC = () => (
   <>
     <div className="login__sosmed">
       <AppButton

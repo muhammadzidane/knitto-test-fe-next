@@ -2,7 +2,7 @@
 import React from "react";
 
 // Components
-import { AppText } from "@/features/app/components";
+import { AppImage, AppText } from "@/features/app/components";
 
 // Interfaces
 import { type ISidebarPlaylist } from "./interfaces";
@@ -13,7 +13,13 @@ const SidebarPlaylist: React.FC<ISidebarPlaylist> = ({
   image,
 }) => (
   <div className="d-flex align-center gap-3">
-    <img src={image} style={{ borderRadius: "4px" }} width={47} />
+    <AppImage
+      src={image}
+      style={{ borderRadius: "4px" }}
+      width={47}
+      height={47}
+      alt="sidebar playlist"
+    />
     <div className="d-flex flex-column gap-1">
       <AppText weight="semibold">{title}</AppText>
       <div className="d-flex gap-2">

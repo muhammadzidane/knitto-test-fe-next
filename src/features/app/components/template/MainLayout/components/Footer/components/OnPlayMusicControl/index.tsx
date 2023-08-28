@@ -1,39 +1,56 @@
-// React
-import React from "react";
-
 // React SVG
 // import { ReactSVG } from "react-svg";
 
 // Components
-import { AppButton, AppText } from "@/features/app/components";
+import { AppButton, AppImage, AppText } from "@/features/app/components";
 
 const OnPlayMusicControl: React.FC = () => {
   return (
     <div className="d-flex flex-column align-center">
       <div className="d-flex align-center gap-7">
-        {/* Shuffle */}
         <AppButton variant="plain">
-          {/* <ReactSVG src="icon-shuffle-24x24.svg" /> */}
+          <AppImage
+            src="/svg/icon-shuffle-24x24.svg"
+            width={24}
+            height={24}
+            alt="shuffle"
+          />
         </AppButton>
 
-        {/* Prev */}
         <AppButton variant="plain">
-          {/* <ReactSVG src="icon-previous-play-16x16.svg" /> */}
-        </AppButton>
-        {/* Pause */}
-
-        <AppButton variant="plain">
-          {/* <ReactSVG src="icon-pause-button-24x24.svg" /> */}
-        </AppButton>
-
-        {/* Next */}
-        <AppButton variant="plain">
-          {/* <ReactSVG src="icon-next-play-16x16.svg" /> */}
+          <AppImage
+            src="/svg/icon-previous-play-16x16.svg"
+            width={16}
+            height={16}
+            alt="shuffle"
+          />
         </AppButton>
 
-        {/* Repeat */}
         <AppButton variant="plain">
-          {/* <ReactSVG src="icon-repeat-16x16.svg" /> */}
+          <AppImage
+            src="/svg/icon-pause-button-24x24.svg"
+            width={24}
+            height={24}
+            alt="shuffle"
+          />
+        </AppButton>
+
+        <AppButton variant="plain">
+          <AppImage
+            src="/svg/icon-next-play-16x16.svg"
+            width={16}
+            height={16}
+            alt="shuffle"
+          />
+        </AppButton>
+
+        <AppButton variant="plain">
+          <AppImage
+            src="/svg/icon-repeat-16x16.svg"
+            width={16}
+            height={16}
+            alt="shuffle"
+          />
         </AppButton>
       </div>
 

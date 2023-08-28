@@ -1,5 +1,3 @@
-"use client";
-
 // React
 import React, { useCallback } from "react";
 
@@ -16,9 +14,9 @@ import {
 } from "@/features/app/components";
 
 // Interfaces
-import { type ILoginBody } from "@/features/auth/redux/rtk/interfaces";
+import { type ILoginValues, type IAction } from "./interfaces";
 
-// // Custom hooks
+// Custom hooks
 import { useAuth } from "@/features/auth/hooks";
 import { useAppDispatch } from "@/features/app/hooks";
 import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
@@ -28,21 +26,18 @@ const LoginForm: React.FC = () => {
   const { login, isLoadingLogin } = useAuth();
 
   /**
-   * @description On submit login form
+   * Handles login form submission.
    *
-   * @param values ILoginBody
-   *
-   * @returns Promise<void>
+   * @param values - An object containing login values.
+   * @param action - An action object.
+   * @returns A Promise that resolves to void.
    */
   const onSubmitForm = useCallback(
-    async (
-      values: ILoginBody,
-      { resetForm }: { resetForm: () => void }
-    ): Promise<void> => {
+    async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
       try {
         const response = await login({ body: values }).unwrap();
         dispatch(authSetAuthenticatedUser(response));
-      } catch (_) {
+      } catch (error) {
         resetForm();
       }
     },

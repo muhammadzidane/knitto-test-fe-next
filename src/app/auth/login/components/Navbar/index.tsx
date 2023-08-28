@@ -2,10 +2,6 @@
 
 import { AppImage } from "@/features/app/components";
 
-// Main logo
-
-// Components
-
 const Navbar: React.FC = () => (
   <div className="login__navbar">
     <AppImage

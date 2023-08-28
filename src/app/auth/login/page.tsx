@@ -2,7 +2,7 @@
 
 import { Content, Navbar, LoginForm, LoginSosmed, SignUp } from "./components";
 
-const AuthLogin = () => (
+const AuthLogin: React.FC = () => (
   <div className="login">
     <Navbar />
     <Content>

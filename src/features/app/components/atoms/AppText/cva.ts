@@ -39,7 +39,7 @@ export const text = cva("text", {
   },
 });
 
-type TColor =
+type IAppColorProps =
   | "primary"
   | "secondary"
   | "success"
@@ -77,7 +77,7 @@ export interface IAppTextProps extends VariantProps<typeof text> {
   /**
    * Color of the text
    */
-  color?: TColor;
+  color?: IAppColorProps;
 
   /**
    * Weight of the text

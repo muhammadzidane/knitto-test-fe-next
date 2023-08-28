@@ -4,7 +4,7 @@
 import React, { useCallback } from "react";
 
 // Components
-import { AppImage } from "..";
+import { AppImage } from "@/features/app/components";
 
 // CVA
 import { button, type IAppButtonProps } from "./cva";
@@ -68,7 +68,9 @@ const AppButton = ({
       {loading && (
         <AppImage
           className="btn__loading"
-          src="rolling-0.8s-24px.svg"
+          src="/svg/rolling-0.8s-24px.svg"
+          width={24}
+          height={24}
           alt="Loading SVG"
         />
       )}

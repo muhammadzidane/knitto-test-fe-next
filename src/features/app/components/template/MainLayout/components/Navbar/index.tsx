@@ -1,3 +1,5 @@
+"use client";
+
 const Navbar: React.FC = () => {
   return <header className="app__navbar">Navbar</header>;
 };

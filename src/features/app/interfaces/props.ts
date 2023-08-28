@@ -1,4 +1,4 @@
-export type TColor =
+export type IAppColorProps =
   | "primary"
   | "secondary"
   | "success"
@@ -15,3 +15,7 @@ export type TColor =
   | "gray-4"
   | "gray-5"
   | "blank";
+
+export interface IChildrenProps {
+  children: React.ReactNode;
+}

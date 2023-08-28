@@ -4,7 +4,7 @@ import Link from "next/link";
 // Components
 import { AppButton, AppText } from "@/features/app/components";
 
-const SignUp = () => (
+const SignUp: React.FC = () => (
   <div>
     <AppText className="text--center" size="large" weight="2xbold">
       Don&apos;t have an account?
