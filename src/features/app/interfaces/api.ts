@@ -9,11 +9,11 @@ export interface IAppPagination {
 }
 
 export interface IAppParams {
-  params: IAppPagination;
+  params?: IAppPagination;
 }
 
 export interface IAppCommonResponse<T> {
   success: boolean;
   message: string;
-  data: T | T[];
+  data: T;
 }

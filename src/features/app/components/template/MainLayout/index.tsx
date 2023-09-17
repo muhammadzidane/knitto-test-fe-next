@@ -1,3 +1,5 @@
+"use client";
+
 // Components
 import { Sidebar, Navbar, Footer } from "./components";
 

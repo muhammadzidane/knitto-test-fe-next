@@ -1,15 +1,27 @@
 // React
+import { useEffect } from "react";
 
 // Components
 import {
   Filter,
   HeaderItem,
   SidebarPlaylist,
+  SidebarPlaylistLoading,
   TrackType,
   YourLibrary,
 } from "./components";
 
+// Hooks
+import { useHome } from "@/features/home/hooks";
+
 const Sidebar: React.FC = () => {
+  const { fetchHomePlaylists, dataHomePlaylists, isLoadingHomePlaylists } =
+    useHome();
+
+  useEffect(() => {
+    void fetchHomePlaylists({});
+  }, [fetchHomePlaylists]);
+
   return (
     <aside className="app__sidebar">
       <div className="sidebar__header">
@@ -28,9 +40,20 @@ const Sidebar: React.FC = () => {
         <div className="sidebar__playlists">
           <Filter />
 
-          <div className="d-flex flex-column gap-4 overflow-y-scroll">
-            <SidebarPlaylist title="Zidaneee" artist="Zidaneee" image="" />
-          </div>
+          {isLoadingHomePlaylists ? (
+            <SidebarPlaylistLoading />
+          ) : (
+            <div className="d-flex flex-column gap-4 overflow-y-scroll">
+              {dataHomePlaylists?.data.map(({ id, title, artist, image }) => (
+                <SidebarPlaylist
+                  key={id}
+                  title={title}
+                  artist={artist}
+                  image={image}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </aside>

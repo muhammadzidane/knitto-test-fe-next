@@ -23,7 +23,7 @@ const AuthMiddleware: React.FC<IChildrenProps> = ({ children }) => {
     return children;
   }
 
-  router.push("/dashboard");
+  router.push("/home");
 
   return children;
 };

@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   popup: {
     toast: {
-      type: "",
+      type: null,
       show: false,
       title: "",
       description: "",

@@ -6,7 +6,7 @@ import { useAppDispatch } from "@/features/app/hooks";
 import { authLogout } from "@/features/auth/redux/slice";
 import { useCallback } from "react";
 
-const Dashboard = () => {
+const Home = () => {
   const dispatch = useAppDispatch();
 
   /**
@@ -34,4 +34,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Home;
