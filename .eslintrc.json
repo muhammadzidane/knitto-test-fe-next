@@ -47,6 +47,6 @@
     ],
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
   },
-  "ignorePatterns": ["next.config.js"],
+  "ignorePatterns": ["next.config.js", "coverage"],
   "root": true
 }
