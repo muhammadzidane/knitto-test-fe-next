@@ -7,8 +7,8 @@ import "@/assets/styles/sass/_index.scss";
 // Redux Provider
 import ReduxProvider from "@/plugins/redux/provider";
 
-// Middleware
-import AuthMiddleware from "./middleware/auth";
+// Auth Route
+import ProtectedAuthRoute from "./protectedAuthRoute";
 
 // Interfaces
 import { type IChildrenProps } from "@/features/app/interfaces";
@@ -22,7 +22,7 @@ const RootLayout: React.FC<IChildrenProps> = ({ children }) => (
   <html lang="en">
     <body>
       <ReduxProvider>
-        <AuthMiddleware>{children}</AuthMiddleware>
+        <ProtectedAuthRoute>{children}</ProtectedAuthRoute>
       </ReduxProvider>
     </body>
   </html>

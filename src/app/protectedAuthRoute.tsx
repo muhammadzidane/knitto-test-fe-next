@@ -9,7 +9,7 @@ import { useAuth } from "@/features/auth/hooks";
 // Interfaces
 import { type IChildrenProps } from "@/features/app/interfaces";
 
-const AuthMiddleware: React.FC<IChildrenProps> = ({ children }) => {
+const ProtectedAuthRoute: React.FC<IChildrenProps> = ({ children }) => {
   const router = useRouter();
   const { authState } = useAuth();
 
@@ -28,4 +28,4 @@ const AuthMiddleware: React.FC<IChildrenProps> = ({ children }) => {
   return children;
 };
 
-export default AuthMiddleware;
+export default ProtectedAuthRoute;
