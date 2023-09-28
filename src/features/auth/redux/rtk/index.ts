@@ -7,19 +7,22 @@ import { type ILoginResponse, type ILoginBody } from "./interfaces";
 
 export const authApi = serviceApi.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation<ILoginResponse, IAppBody<ILoginBody>>({
+    authLogin: builder.mutation<ILoginResponse, IAppBody<ILoginBody>>({
       query: ({ body }) => ({
         body,
         url: "/auth/login",
         method: "POST",
       }),
-      transformResponse: ({ accessToken, userData }: ILoginResponse) => ({
-        accessToken,
-        userData,
-      }),
+      transformResponse: ({ data }) => {
+        const { accessToken, userData } = data;
+        return {
+          accessToken,
+          userData,
+        };
+      },
     }),
   }),
   overrideExisting: false,
 });
 
-export const { useLoginMutation } = authApi;
+export const { useAuthLoginMutation } = authApi;

@@ -15,12 +15,12 @@ import {
 import { useHome } from "@/features/home/hooks";
 
 const Sidebar: React.FC = () => {
-  const { fetchHomePlaylists, dataHomePlaylists, isLoadingHomePlaylists } =
+  const { homePlaylists, homePlaylistsData, homePlaylistsIsLoading } =
     useHome();
 
   useEffect(() => {
-    void fetchHomePlaylists({});
-  }, [fetchHomePlaylists]);
+    void homePlaylists({});
+  }, [homePlaylists]);
 
   return (
     <aside className="app__sidebar">
@@ -40,11 +40,11 @@ const Sidebar: React.FC = () => {
         <div className="sidebar__playlists">
           <Filter />
 
-          {isLoadingHomePlaylists ? (
+          {homePlaylistsIsLoading ? (
             <SidebarPlaylistLoading />
           ) : (
             <div className="d-flex flex-column gap-4 overflow-y-scroll">
-              {dataHomePlaylists?.data.map(({ id, title, artist, image }) => (
+              {homePlaylistsData?.data.map(({ id, title, artist, image }) => (
                 <SidebarPlaylist
                   key={id}
                   title={title}

@@ -23,7 +23,7 @@ import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
 
 const LoginForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { login, isLoadingLogin } = useAuth();
+  const { authLogin, authLoginIsLoading } = useAuth();
 
   /**
    * Handles login form submission.
@@ -35,13 +35,13 @@ const LoginForm: React.FC = () => {
   const onSubmitForm = useCallback(
     async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
       try {
-        const response = await login({ body: values }).unwrap();
+        const response = await authLogin({ body: values }).unwrap();
         dispatch(authSetAuthenticatedUser(response));
       } catch (error) {
         resetForm();
       }
     },
-    [dispatch, login]
+    [dispatch, authLogin]
   );
 
   // Validation Form
@@ -88,7 +88,7 @@ const LoginForm: React.FC = () => {
             <AppCheckBox label="Remember me" />
 
             <AppButton
-              loading={isLoadingLogin}
+              loading={authLoginIsLoading}
               type="submit"
               variant="spotify"
               width="121px"

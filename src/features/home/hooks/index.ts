@@ -3,19 +3,19 @@ import { useLazyHomePlaylistsQuery } from "../redux/rtk";
 
 export const useHome = () => {
   const [
-    fetchHomePlaylists,
+    homePlaylists,
     {
-      data: dataHomePlaylists,
-      isLoading: isLoadingHomePlaylists,
-      isFetching: isFetchingHomePlaylists,
+      data: homePlaylistsData,
+      isLoading: homePlaylistsIsLoading,
+      isFetching: homePlaylistsIsFetching,
     },
   ] = useLazyHomePlaylistsQuery();
 
   return {
-    // Lazy
-    fetchHomePlaylists,
-    dataHomePlaylists,
-    isLoadingHomePlaylists,
-    isFetchingHomePlaylists,
+    // Home Playlists
+    homePlaylists,
+    homePlaylistsData,
+    homePlaylistsIsLoading,
+    homePlaylistsIsFetching,
   };
 };

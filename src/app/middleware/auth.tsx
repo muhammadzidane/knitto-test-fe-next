@@ -11,10 +11,10 @@ import { type IChildrenProps } from "@/features/app/interfaces";
 
 const AuthMiddleware: React.FC<IChildrenProps> = ({ children }) => {
   const router = useRouter();
-  const { authData } = useAuth();
+  const { authState } = useAuth();
 
   // Check authentication status here
-  const isAuthenticated = authData.isLogin;
+  const isAuthenticated = authState.isLogin;
 
   // If user is not authenticated, redirect to login page
   if (!isAuthenticated) {
