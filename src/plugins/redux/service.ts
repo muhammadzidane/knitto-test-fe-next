@@ -6,7 +6,7 @@ import {
 } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
-const baseUrl = process.env.NEXTAUTH_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const prepareHeaders = (
   headers: Headers,

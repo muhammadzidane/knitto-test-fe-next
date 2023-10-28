@@ -72,6 +72,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
           width={24}
           height={24}
           alt="Loading SVG"
+          priority
         />
       )}
       <span>{children}</span>

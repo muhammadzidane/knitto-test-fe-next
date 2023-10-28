@@ -1,9 +1,16 @@
 "use client";
 
-import { MainLayout, AppButton } from "@/features/app/components";
-import { useAppDispatch } from "@/features/app/hooks";
-import { authLogout } from "@/features/auth/redux/slice";
+// React
 import { useCallback } from "react";
+
+// Components
+import { MainLayout, AppButton } from "@/features/app/components";
+
+// Custom Hooks
+import { useAppDispatch } from "@/features/app/hooks";
+
+// ! SLICE
+import { authLogout } from "@/features/auth/redux/slice";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();

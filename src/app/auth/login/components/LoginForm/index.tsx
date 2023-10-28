@@ -1,5 +1,11 @@
 // React
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
+
+// Next
+import { useRouter } from "next/navigation";
+
+// Next Auth
+import { signIn } from "next-auth/react";
 
 // Formik & Yup
 import { Field, Form, Formik } from "formik";
@@ -16,10 +22,10 @@ import {
 // Interfaces
 import { type ILoginValues, type IAction } from "./interfaces";
 
-// Custom hooks
-import { signIn } from "next-auth/react";
-
 const LoginForm: React.FC = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+
   /**
    * Handles login form submission.
    *
@@ -29,20 +35,23 @@ const LoginForm: React.FC = () => {
    */
   const onSubmitForm = useCallback(
     async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
+      setLoading(true);
+
       try {
-        console.log(values);
-        const response = await signIn("credentials", {
+        await signIn("credentials", {
           user: values.user,
           password: values.password,
           redirect: false,
         });
 
-        console.log(response);
+        router.push("/");
       } catch (error) {
         resetForm();
+      } finally {
+        setLoading(false);
       }
     },
-    []
+    [router]
   );
 
   // Validation Form
@@ -89,7 +98,7 @@ const LoginForm: React.FC = () => {
             <AppCheckBox label="Remember me" />
 
             <AppButton
-              loading={false}
+              loading={loading}
               type="submit"
               variant="spotify"
               width="121px"

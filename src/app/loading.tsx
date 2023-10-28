@@ -9,6 +9,7 @@ const Loading = () => (
       width={24}
       height={24}
       alt="Loading SVG"
+      priority
     />
   </div>
 );

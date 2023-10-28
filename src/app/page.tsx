@@ -11,7 +11,7 @@ const Home: React.FC = async () => {
 
   return (
     <>
-      <div>Aku Maung</div>
+      <div>this is a protected page</div>
     </>
   );
 };
