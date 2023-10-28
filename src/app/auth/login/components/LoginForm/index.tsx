@@ -17,14 +17,9 @@ import {
 import { type ILoginValues, type IAction } from "./interfaces";
 
 // Custom hooks
-import { useAuth } from "@/features/auth/hooks";
-import { useAppDispatch } from "@/features/app/hooks";
-import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
+import { signIn } from "next-auth/react";
 
 const LoginForm: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const { authLogin, authLoginIsLoading } = useAuth();
-
   /**
    * Handles login form submission.
    *
@@ -35,13 +30,19 @@ const LoginForm: React.FC = () => {
   const onSubmitForm = useCallback(
     async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
       try {
-        const response = await authLogin({ body: values }).unwrap();
-        dispatch(authSetAuthenticatedUser(response));
+        console.log(values);
+        const response = await signIn("credentials", {
+          user: values.user,
+          password: values.password,
+          redirect: false,
+        });
+
+        console.log(response);
       } catch (error) {
         resetForm();
       }
     },
-    [dispatch, authLogin]
+    []
   );
 
   // Validation Form
@@ -88,7 +89,7 @@ const LoginForm: React.FC = () => {
             <AppCheckBox label="Remember me" />
 
             <AppButton
-              loading={authLoginIsLoading}
+              loading={false}
               type="submit"
               variant="spotify"
               width="121px"

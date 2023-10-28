@@ -1,4 +1,4 @@
-export interface IUserDataResponse {
+export interface IUser {
   id: string;
   branch_id: number;
   name: string;
@@ -12,14 +12,4 @@ export interface IUserDataResponse {
   is_active: boolean;
   is_verified_email: boolean;
   deleted_at: null;
-}
-
-export interface ILoginResponse {
-  accessToken: string;
-  userData: IUserDataResponse;
-}
-
-export interface ILoginBody {
-  user: string;
-  password: string;
 }

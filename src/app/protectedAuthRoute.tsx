@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/features/auth/hooks";
 
 // Interfaces
-import { type IChildrenProps } from "@/features/app/interfaces";
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-const ProtectedAuthRoute: React.FC<IChildrenProps> = ({ children }) => {
+const ProtectedAuthRoute: React.FC<IAppChildrenProps> = ({ children }) => {
   const router = useRouter();
   const { authState } = useAuth();
 

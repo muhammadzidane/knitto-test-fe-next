@@ -12,7 +12,7 @@ import { button, type IAppButtonProps } from "./cva";
 /**
  * Base button component
  */
-const AppButton = ({
+const AppButton: React.FC<IAppButtonProps> = ({
   children,
   className,
   rounded = "small",
@@ -26,7 +26,7 @@ const AppButton = ({
   icon,
   type = "button",
   onClick,
-}: IAppButtonProps) => {
+}) => {
   const buttonClassName = button({
     className,
     rounded,

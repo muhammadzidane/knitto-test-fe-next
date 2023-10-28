@@ -3,12 +3,12 @@
 // Interfaces
 import { skeleton, type IAppSkeletonProps } from "./cva";
 
-const AppSkeleton = ({
+const AppSkeleton: React.FC<IAppSkeletonProps> = ({
   className,
-  width,
-  height,
+  width = "100%",
+  height = "20px",
   rounded,
-}: IAppSkeletonProps) => {
+}) => {
   const skeletonClassName = skeleton({ className, rounded });
 
   return (
@@ -16,11 +16,6 @@ const AppSkeleton = ({
       <div className="skeleton__list" style={{ height }}></div>
     </div>
   );
-};
-
-AppSkeleton.defaultProps = {
-  width: "100%",
-  height: "20px",
 };
 
 export default AppSkeleton;

@@ -1,12 +1,11 @@
 "use client";
 
-// Components
 import { MainLayout, AppButton } from "@/features/app/components";
 import { useAppDispatch } from "@/features/app/hooks";
 import { authLogout } from "@/features/auth/redux/slice";
 import { useCallback } from "react";
 
-const Home = () => {
+const Home: React.FC = () => {
   const dispatch = useAppDispatch();
 
   /**

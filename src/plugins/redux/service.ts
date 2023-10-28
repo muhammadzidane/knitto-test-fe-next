@@ -6,8 +6,8 @@ import {
 } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
-// const baseUrl = process.env.BASE_URL;
-const baseUrl = "https://77f4c4e5-4e66-4e24-83da-afd0f79e584a.mock.pstmn.io";
+const baseUrl = process.env.NEXTAUTH_URL;
+
 const prepareHeaders = (
   headers: Headers,
   // api: Pick<BaseQueryApi, "getState" | "extra" | "endpoint" | "type" | "forced">

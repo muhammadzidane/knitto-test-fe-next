@@ -12,7 +12,7 @@ export interface IAppParams {
   params?: IAppPagination;
 }
 
-export interface IAppCommonResponse<T> {
+export interface IAppResponse<T> {
   success: boolean;
   message: string;
   data: T;
