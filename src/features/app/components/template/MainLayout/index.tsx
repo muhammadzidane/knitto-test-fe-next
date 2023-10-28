@@ -4,9 +4,9 @@
 import { Sidebar, Navbar, Footer } from "./components";
 
 // Interfaces
-import { type IChildrenProps } from "@/features/app/interfaces";
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-const MainLayout: React.FC<IChildrenProps> = ({ children }) => (
+const MainLayout: React.FC<IAppChildrenProps> = ({ children }) => (
   <div className="app">
     <Sidebar />
     <div className="app__content">

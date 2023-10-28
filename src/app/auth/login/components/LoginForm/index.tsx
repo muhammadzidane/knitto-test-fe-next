@@ -1,5 +1,11 @@
 // React
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
+
+// Next
+import { useRouter } from "next/navigation";
+
+// Next Auth
+import { signIn } from "next-auth/react";
 
 // Formik & Yup
 import { Field, Form, Formik } from "formik";
@@ -16,14 +22,9 @@ import {
 // Interfaces
 import { type ILoginValues, type IAction } from "./interfaces";
 
-// Custom hooks
-import { useAuth } from "@/features/auth/hooks";
-import { useAppDispatch } from "@/features/app/hooks";
-import { authSetAuthenticatedUser } from "@/features/auth/redux/slice";
-
 const LoginForm: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const { authLogin, authLoginIsLoading } = useAuth();
+  const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
 
   /**
    * Handles login form submission.
@@ -34,14 +35,23 @@ const LoginForm: React.FC = () => {
    */
   const onSubmitForm = useCallback(
     async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
+      setLoading(true);
+
       try {
-        const response = await authLogin({ body: values }).unwrap();
-        dispatch(authSetAuthenticatedUser(response));
+        await signIn("credentials", {
+          user: values.user,
+          password: values.password,
+          redirect: false,
+        });
+
+        router.push("/");
       } catch (error) {
         resetForm();
+      } finally {
+        setLoading(false);
       }
     },
-    [dispatch, authLogin]
+    [router]
   );
 
   // Validation Form
@@ -88,7 +98,7 @@ const LoginForm: React.FC = () => {
             <AppCheckBox label="Remember me" />
 
             <AppButton
-              loading={authLoginIsLoading}
+              loading={loading}
               type="submit"
               variant="spotify"
               width="121px"

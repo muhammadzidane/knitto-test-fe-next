@@ -4,9 +4,9 @@
 import React from "react";
 
 // Interfaces
-import { type IChildrenProps } from "@/features/app/interfaces";
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-const Content: React.FC<IChildrenProps> = ({ children }) => (
+const Content: React.FC<IAppChildrenProps> = ({ children }) => (
   <div className="login__content">
     <div className="login__content-inner">{children}</div>
   </div>

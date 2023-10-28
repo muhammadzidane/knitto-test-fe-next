@@ -11,9 +11,9 @@ import { persistor, store } from ".";
 import { PersistGate } from "redux-persist/integration/react";
 
 // Interfaces
-import { type IChildrenProps } from "@/features/app/interfaces";
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-const ReduxProvider: React.FC<IChildrenProps> = ({ children }) => (
+const ReduxProvider: React.FC<IAppChildrenProps> = ({ children }) => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       {children}

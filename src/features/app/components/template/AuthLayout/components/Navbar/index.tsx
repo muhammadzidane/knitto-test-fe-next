@@ -6,9 +6,10 @@ const Navbar: React.FC = () => (
   <div className="login__navbar">
     <AppImage
       width={143}
-      height={42.86}
+      height={42}
       src="/images/main-logo-black-1.png"
       alt="Deskripsi gambar"
+      priority
     />
   </div>
 );

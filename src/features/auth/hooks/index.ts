@@ -10,6 +10,7 @@ export const useAuth = () => {
   const [authLogin, { isLoading: authLoginIsLoading }] = useAuthLoginMutation();
 
   return {
+    // State
     authState,
 
     // Login

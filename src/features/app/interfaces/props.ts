@@ -16,6 +16,6 @@ export type IAppColorProps =
   | "gray-5"
   | "blank";
 
-export interface IChildrenProps {
+export interface IAppChildrenProps {
   children: React.ReactNode;
 }
