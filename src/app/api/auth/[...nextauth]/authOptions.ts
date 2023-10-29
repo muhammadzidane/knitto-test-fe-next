@@ -18,7 +18,7 @@ export const options: NextAuthOptions = {
       },
       async authorize(credentials) {
         const baseUrl = process.env.NEXT_PUBLIC_MOCK_APIARY_API;
-        const res = await fetch(`${baseUrl}/auth/login`, {
+        const response = await fetch(`${baseUrl}/auth/login`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -28,12 +28,15 @@ export const options: NextAuthOptions = {
             password: credentials?.password,
           }),
         });
-        const user = await res.json();
+        const dataResponse = await response.json();
 
-        if (res.ok && user) {
-          return { ...user.data.userData, accessToken: user.data.accessToken };
+        if (response.ok && dataResponse) {
+          return {
+            ...dataResponse.data.userData,
+            accessToken: dataResponse.data.accessToken,
+          };
         }
-        return null;
+        throw new Error(dataResponse.message);
       },
     }),
   ],

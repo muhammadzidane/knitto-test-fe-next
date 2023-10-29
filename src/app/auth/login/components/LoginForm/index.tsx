@@ -21,9 +21,11 @@ import {
 
 // Interfaces
 import { type ILoginValues, type IAction } from "./interfaces";
+import { useToast } from "@/features/app/hooks";
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
+  const { showToast } = useToast();
   const [loading, setLoading] = useState<boolean>(false);
 
   /**
@@ -37,21 +39,25 @@ const LoginForm: React.FC = () => {
     async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
       setLoading(true);
 
-      try {
-        await signIn("credentials", {
-          user: values.user,
-          password: values.password,
-          redirect: false,
-        });
+      const response = await signIn("credentials", {
+        user: values.user,
+        password: values.password,
+        redirect: false,
+      });
 
+      if (response?.ok) {
         router.push("/home");
-      } catch (error) {
-        resetForm();
-      } finally {
+      } else {
+        showToast({
+          type: "error",
+          title: "Error!",
+          description: response?.error ?? "Tejadi kesalahan",
+        });
         setLoading(false);
+        resetForm();
       }
     },
-    [router]
+    [router, showToast]
   );
 
   // Validation Form
