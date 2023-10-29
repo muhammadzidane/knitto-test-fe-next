@@ -6,7 +6,7 @@ import {
 } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_MOCK_APIARY_API;
 
 const prepareHeaders = (
   headers: Headers,
@@ -14,6 +14,8 @@ const prepareHeaders = (
   api: any
 ) => {
   const token = api.getState().auth.auth.accessToken;
+
+  console.log(api.getState());
 
   // If we have a token set in state, let's assume that we should be passing it.
   if (token !== undefined) {

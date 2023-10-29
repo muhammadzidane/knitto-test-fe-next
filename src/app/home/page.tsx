@@ -1,28 +1,22 @@
 "use client";
 
-// React
-import { useCallback } from "react";
+// Next Auth
+import { signOut } from "next-auth/react";
 
 // Components
 import { MainLayout, AppButton } from "@/features/app/components";
 
 // Custom Hooks
-import { useAppDispatch } from "@/features/app/hooks";
-
-// ! SLICE
-import { authLogout } from "@/features/auth/redux/slice";
 
 const Home: React.FC = () => {
-  const dispatch = useAppDispatch();
-
   /**
    * @description Handle logout
    *
    * @returns void.
    */
-  const onClickLogout = useCallback((): void => {
-    dispatch(authLogout());
-  }, [dispatch]);
+  const onClickLogout = () => {
+    void signOut();
+  };
 
   return (
     <MainLayout>

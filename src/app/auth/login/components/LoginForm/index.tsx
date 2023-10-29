@@ -44,7 +44,7 @@ const LoginForm: React.FC = () => {
           redirect: false,
         });
 
-        router.push("/");
+        router.push("/home");
       } catch (error) {
         resetForm();
       } finally {
