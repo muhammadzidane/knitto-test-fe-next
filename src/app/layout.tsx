@@ -11,7 +11,7 @@ import NextAuthProvider from "@/plugins/next-auth";
 import ReduxProvider from "@/plugins/redux/provider";
 
 // Auth Route
-// import ProtectedAuthRoute from "./protectedAuthRoute";
+import { ProtectedAuth } from "@/features/app/components";
 
 // Interfaces
 import { type IAppChildrenProps } from "@/features/app/interfaces";
@@ -25,7 +25,9 @@ const RootLayout = ({ children }: IAppChildrenProps) => (
   <html lang="en">
     <body>
       <ReduxProvider>
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider>
+          <ProtectedAuth>{children}</ProtectedAuth>
+        </NextAuthProvider>
       </ReduxProvider>
     </body>
   </html>
