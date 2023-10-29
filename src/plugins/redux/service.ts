@@ -15,8 +15,6 @@ const prepareHeaders = (
 ) => {
   const token = api.getState().auth.auth.accessToken;
 
-  console.log(api.getState());
-
   // If we have a token set in state, let's assume that we should be passing it.
   if (token !== undefined) {
     headers.set("authorization", `Bearer ${token}`);

@@ -25,10 +25,7 @@ const RootLayout = ({ children }: IAppChildrenProps) => (
   <html lang="en">
     <body>
       <ReduxProvider>
-        <NextAuthProvider>
-          {/* <ProtectedAuthRoute>{children}</ProtectedAuthRoute> */}
-          <>{children}</>
-        </NextAuthProvider>
+        <NextAuthProvider>{children}</NextAuthProvider>
       </ReduxProvider>
     </body>
   </html>

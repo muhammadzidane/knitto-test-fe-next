@@ -30,8 +30,6 @@ export const options: NextAuthOptions = {
         });
         const user = await res.json();
 
-        console.log(user);
-
         if (res.ok && user) {
           return { ...user.data.userData, accessToken: user.data.accessToken };
         }
