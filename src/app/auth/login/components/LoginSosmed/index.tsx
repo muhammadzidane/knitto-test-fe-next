@@ -1,40 +1,39 @@
 // React
-import React from "react";
-
 // Components
 import { AppButton, AppText } from "@/features/app/components";
+import React from "react";
 
 const LoginSosmed: React.FC = () => (
   <>
     <div className="login__sosmed">
       <AppButton
-        variant="facebook"
-        size="large"
-        rounded="large"
         icon="/svg/facebook-circle-white-24x24.svg"
+        variant="facebook"
+        rounded="large"
+        size="large"
       >
         CONTINUE WITH FACEBOOK
       </AppButton>
 
       <AppButton
-        variant="dark-1"
-        size="large"
-        rounded="large"
         icon="/svg/apple-white.svg"
+        variant="dark-1"
+        rounded="large"
+        size="large"
       >
         CONTINUE WITH APPLE
       </AppButton>
 
       <AppButton
+        icon="/svg/google.svg"
+        rounded="large"
         variant="blank"
         size="large"
-        rounded="large"
-        icon="/svg/google.svg"
       >
         CONTINUE WITH GOOGLE
       </AppButton>
 
-      <AppButton variant="blank" size="large" rounded="large">
+      <AppButton rounded="large" variant="blank" size="large">
         CONTINUE WITH PHONE NUMBER
       </AppButton>
     </div>

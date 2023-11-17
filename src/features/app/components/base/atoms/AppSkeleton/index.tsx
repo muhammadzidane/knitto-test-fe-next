@@ -1,18 +1,18 @@
 "use client";
 
 // Interfaces
-import { skeleton, type IAppSkeletonProps } from "./cva";
+import { type IAppSkeletonProps, skeleton } from "./cva";
 
 const AppSkeleton: React.FC<IAppSkeletonProps> = ({
-  className,
-  width = "100%",
   height = "20px",
+  width = "100%",
+  className,
   rounded,
 }) => {
   const skeletonClassName = skeleton({ className, rounded });
 
   return (
-    <div className={skeletonClassName} style={{ width, height }}>
+    <div className={skeletonClassName} style={{ height, width }}>
       <div className="skeleton__list" style={{ height }}></div>
     </div>
   );

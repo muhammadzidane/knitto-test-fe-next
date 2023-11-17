@@ -5,17 +5,17 @@ export const useHome = () => {
   const [
     homePlaylists,
     {
-      data: homePlaylistsData,
-      isLoading: homePlaylistsIsLoading,
       isFetching: homePlaylistsIsFetching,
+      isLoading: homePlaylistsIsLoading,
+      data: homePlaylistsData,
     },
   ] = useLazyHomePlaylistsQuery();
 
   return {
+    homePlaylistsIsFetching,
+    homePlaylistsIsLoading,
+    homePlaylistsData,
     // Home Playlists
     homePlaylists,
-    homePlaylistsData,
-    homePlaylistsIsLoading,
-    homePlaylistsIsFetching,
   };
 };

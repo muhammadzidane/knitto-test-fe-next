@@ -6,8 +6,8 @@ import { type IItemWithIconProps } from "./interfaces";
 
 const ItemWithIcon: React.FC<IItemWithIconProps> = ({
   children,
-  icon,
   active,
+  icon,
 }) => {
   const activeClass = `font-semibold ${active ?? false ? "text-white-1" : ""}`;
 

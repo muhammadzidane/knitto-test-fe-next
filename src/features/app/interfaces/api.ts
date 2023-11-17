@@ -3,9 +3,9 @@ export interface IAppBody<T> {
 }
 
 export interface IAppPagination {
-  size?: string;
-  limit?: string;
   search?: string;
+  limit?: string;
+  size?: string;
 }
 
 export interface IAppParams {

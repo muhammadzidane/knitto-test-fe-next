@@ -1,11 +1,11 @@
 // Service
-import serviceApi from "@/plugins/redux/service";
-
 // Interfaces
 import {
   type IAppResponse,
   type IAppParams,
 } from "@/features/app/interfaces/api";
+import serviceApi from "@/plugins/redux/service";
+
 import { type IHomePlayListsData } from "../../interfaces";
 
 export const homeApi = serviceApi.injectEndpoints({
@@ -15,9 +15,9 @@ export const homeApi = serviceApi.injectEndpoints({
       IAppParams
     >({
       query: ({ params }) => ({
-        params,
         url: "/home/playlists",
         method: "GET",
+        params,
       }),
     }),
   }),

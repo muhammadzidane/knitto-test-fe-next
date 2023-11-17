@@ -1,21 +1,18 @@
-// React
+import { useHome } from "@/features/home/hooks";
 import { useEffect } from "react";
 
 // Components
 import {
-  Filter,
-  HeaderItem,
-  SidebarPlaylist,
   SidebarPlaylistLoading,
-  TrackType,
+  SidebarPlaylist,
   YourLibrary,
+  HeaderItem,
+  TrackType,
+  Filter,
 } from "./components";
 
-// Hooks
-import { useHome } from "@/features/home/hooks";
-
 const Sidebar: React.FC = () => {
-  const { homePlaylists, homePlaylistsData, homePlaylistsIsLoading } =
+  const { homePlaylistsIsLoading, homePlaylistsData, homePlaylists } =
     useHome();
 
   useEffect(() => {
@@ -44,12 +41,12 @@ const Sidebar: React.FC = () => {
             <SidebarPlaylistLoading />
           ) : (
             <div className="d-flex flex-column gap-4 overflow-y-scroll">
-              {homePlaylistsData?.data.map(({ id, title, artist, image }) => (
+              {homePlaylistsData?.data.map(({ artist, image, title, id }) => (
                 <SidebarPlaylist
-                  key={id}
-                  title={title}
                   artist={artist}
                   image={image}
+                  title={title}
+                  key={id}
                 />
               ))}
             </div>

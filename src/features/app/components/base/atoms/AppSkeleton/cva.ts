@@ -16,9 +16,9 @@ export interface IAppSkeletonProps extends VariantProps<typeof skeleton> {
   className?: string;
 
   /**
-   * Width of the skeleton
+   * Rounded of the skeleton
    */
-  width?: string;
+  rounded?: boolean;
 
   /**
    * Height of the skeleton
@@ -26,7 +26,7 @@ export interface IAppSkeletonProps extends VariantProps<typeof skeleton> {
   height?: string;
 
   /**
-   * Rounded of the skeleton
+   * Width of the skeleton
    */
-  rounded?: boolean;
+  width?: string;
 }

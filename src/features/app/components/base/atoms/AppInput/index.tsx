@@ -7,12 +7,12 @@ import { type IAppInputProps, input } from "./cva";
  * Base input component
  */
 const AppInput: React.FC<IAppInputProps> = ({
-  className,
   type = "text",
-  name,
-  placeholder,
-  label,
   errorMessage,
+  placeholder,
+  className,
+  label,
+  name,
   ...props
 }) => {
   const inputClassName = input({ className });
@@ -20,15 +20,15 @@ const AppInput: React.FC<IAppInputProps> = ({
   return (
     <div className="mb-5">
       {label !== undefined && (
-        <AppText className="mb-2" size="small" weight="xbold">
+        <AppText className="mb-2" weight="xbold" size="small">
           {label}
         </AppText>
       )}
       <input
-        type={type}
-        name={name}
         className={inputClassName}
         placeholder={placeholder}
+        name={name}
+        type={type}
         {...props}
       />
       {errorMessage !== undefined && (

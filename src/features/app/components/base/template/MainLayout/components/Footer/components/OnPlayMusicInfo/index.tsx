@@ -1,8 +1,7 @@
 // React
-import React from "react";
-
 // Components
 import { AppText } from "@/features/app/components";
+import React from "react";
 // import { ReactSVG } from "react-svg";
 
 const OnPlayMusicInfo: React.FC = () => {
@@ -11,13 +10,13 @@ const OnPlayMusicInfo: React.FC = () => {
 
   return (
     <div className="d-flex align-center gap-4">
-      <img src={image} width={55} style={{ borderRadius: "4px" }} />
+      <img style={{ borderRadius: "4px" }} src={image} width={55} />
 
       <div>
-        <AppText size="small" className="mb-1" weight="semibold">
+        <AppText weight="semibold" className="mb-1" size="small">
           YES or YES
         </AppText>
-        <AppText weight="semibold" size="xsmall" color="gray-3">
+        <AppText weight="semibold" color="gray-3" size="xsmall">
           TWICE
         </AppText>
       </div>

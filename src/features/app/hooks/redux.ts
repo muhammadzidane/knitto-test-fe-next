@@ -1,7 +1,7 @@
 import {
+  type TypedUseSelectorHook,
   useDispatch,
   useSelector,
-  type TypedUseSelectorHook,
 } from "react-redux";
 import { type TRootDispatch, type TRootState } from "@/plugins/redux";
 

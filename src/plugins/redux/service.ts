@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+  fetchBaseQuery,
   // type BaseQueryApi,
   createApi,
-  fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
@@ -24,12 +24,12 @@ const prepareHeaders = (
 };
 
 export const serviceApi = createApi({
-  reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl,
     prepareHeaders,
+    baseUrl,
   }),
   endpoints: () => ({}),
+  reducerPath: "api",
 });
 
 export default serviceApi;

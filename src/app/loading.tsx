@@ -7,11 +7,11 @@ const Loading = () => (
     style={{ height: "100vh", width: "100vw" }}
   >
     <AppImage
-      className="btn__loading"
       src="/svg/rolling-0.8s-24px.svg"
-      width={24}
-      height={24}
+      className="btn__loading"
       alt="Loading SVG"
+      height={24}
+      width={24}
       priority
     />
   </div>

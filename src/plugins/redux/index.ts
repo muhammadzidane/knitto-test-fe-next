@@ -1,35 +1,32 @@
 // Redux Toolkit
-import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query";
-
 // Redux Persist
 import {
-  persistStore,
   persistReducer,
-  FLUSH,
+  persistStore,
   REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
   REGISTER,
+  PERSIST,
+  FLUSH,
+  PAUSE,
+  PURGE,
 } from "redux-persist";
+import { setupListeners } from "@reduxjs/toolkit/query";
+// API
+import { authApi } from "@/features/auth/redux/rtk";
+import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 
 // Middlewares
 import { rtkQueryErrorLoggerMiddleware } from "./middleware";
-
-// API
-import { authApi } from "@/features/auth/redux/rtk";
-
 // Reducers
 import { reducers } from "./combineReducer";
 
 // Config for Redux Persist
 const persistConfig = {
+  whitelist: ["auth"],
   key: "root",
   version: 1,
   storage,
-  whitelist: ["auth"],
 };
 
 // Persisted Reducer
@@ -40,14 +37,14 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 // Store
 const store = configureStore({
-  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      immutableCheck: false,
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
+      immutableCheck: false,
     }).concat(rtkQueryErrorLoggerMiddleware, authApi.middleware),
+  reducer: persistedReducer,
   // preloadedState,
 });
 
@@ -56,7 +53,7 @@ const persistor = persistStore(store);
 
 setupListeners(store.dispatch);
 
-export { store, persistor };
+export { persistor, store };
 
 // App Store
 export type TRootState = ReturnType<typeof store.getState>;
