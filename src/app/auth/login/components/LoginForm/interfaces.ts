@@ -1,6 +1,6 @@
 export interface ILoginValues {
-  user: string;
   password: string;
+  user: string;
 }
 
 export interface IAction {

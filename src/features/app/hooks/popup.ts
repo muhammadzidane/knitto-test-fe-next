@@ -3,8 +3,8 @@ import { useAppDispatch } from "./redux";
 
 interface IShowToast {
   type: "success" | "error" | "info";
-  title: string;
   description: string;
+  title: string;
 }
 
 interface IUseToast {
@@ -21,5 +21,5 @@ export const useToast = (): IUseToast => {
     dispatch(popupHideToast());
   };
 
-  return { showToast, hideToast };
+  return { hideToast, showToast };
 };

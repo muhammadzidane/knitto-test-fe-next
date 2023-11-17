@@ -1,5 +1,5 @@
 export interface IHeaderItemProps {
-  icon: string;
-  title: string;
   active?: boolean;
+  title: string;
+  icon: string;
 }

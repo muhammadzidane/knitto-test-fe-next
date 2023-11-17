@@ -1,27 +1,23 @@
 // React
-import React, { useCallback, useState } from "react";
-
-// Next
-import { useRouter } from "next/navigation";
-
-// Next Auth
-import { signIn } from "next-auth/react";
-
-// Formik & Yup
-import { Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-
 // Components
 import {
-  AppButton,
   AppCheckBox,
+  AppButton,
   AppInput,
   AppText,
 } from "@/features/app/components";
+import React, { useCallback, useState } from "react";
+import { useToast } from "@/features/app/hooks";
+// Formik & Yup
+import { Formik, Field, Form } from "formik";
+// Next
+import { useRouter } from "next/navigation";
+// Next Auth
+import { signIn } from "next-auth/react";
+import * as Yup from "yup";
 
 // Interfaces
 import { type ILoginValues, type IAction } from "./interfaces";
-import { useToast } from "@/features/app/hooks";
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
@@ -40,8 +36,8 @@ const LoginForm: React.FC = () => {
       setLoading(true);
 
       const response = await signIn("credentials", {
-        user: values.user,
         password: values.password,
+        user: values.user,
         redirect: false,
       });
 
@@ -49,9 +45,9 @@ const LoginForm: React.FC = () => {
         router.push("/home");
       } else {
         showToast({
-          type: "error",
-          title: "Error!",
           description: response?.error ?? "Tejadi kesalahan",
+          title: "Error!",
+          type: "error",
         });
         setLoading(false);
         resetForm();
@@ -62,38 +58,38 @@ const LoginForm: React.FC = () => {
 
   // Validation Form
   const validationSchema = Yup.object().shape({
-    user: Yup.string().required("Tidak boleh kosong"),
     password: Yup.string().required("Tidak boleh kosong"),
+    user: Yup.string().required("Tidak boleh kosong"),
   });
 
   return (
     <Formik
       initialValues={{
-        user: "",
         password: "",
+        user: "",
       }}
       validationSchema={validationSchema}
       onSubmit={onSubmitForm}
     >
-      {({ errors, touched }) => (
+      {({ touched, errors }) => (
         <Form className="login__form">
           <Field
+            errorMessage={errors.user && touched.user && errors.user}
+            placeholder="Email address or username"
+            label="Email address or username"
             as={AppInput}
             name="user"
-            label="Email address or username"
-            placeholder="Email address or username"
-            errorMessage={errors.user && touched.user && errors.user}
           />
 
           <Field
-            as={AppInput}
-            type="password"
-            name="password"
-            label="Password"
-            placeholder="Password"
             errorMessage={
               errors.password && touched.password && errors.password
             }
+            placeholder="Password"
+            label="Password"
+            name="password"
+            type="password"
+            as={AppInput}
           />
 
           <AppText className="text--underline" weight="semibold">
@@ -105,11 +101,11 @@ const LoginForm: React.FC = () => {
 
             <AppButton
               loading={loading}
-              type="submit"
               variant="spotify"
+              rounded="large"
+              type="submit"
               width="121px"
               size="large"
-              rounded="large"
             >
               LOG IN
             </AppButton>

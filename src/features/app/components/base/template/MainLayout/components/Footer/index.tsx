@@ -3,8 +3,8 @@
 // Components
 import {
   OnPlayMusicControl,
-  OnPlayMusicInfo,
   OnPlayMusicSetting,
+  OnPlayMusicInfo,
 } from "./components";
 
 const Footer: React.FC = () => (

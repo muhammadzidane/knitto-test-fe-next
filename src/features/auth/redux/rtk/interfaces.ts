@@ -6,6 +6,6 @@ export interface ILoginResponse {
 }
 
 export interface ILoginBody {
-  user?: string;
   password?: string;
+  user?: string;
 }

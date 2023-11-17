@@ -1,18 +1,13 @@
 // Service
-import serviceApi from "@/plugins/redux/service";
-
 // Interfaces
 import { type IAppBody } from "@/features/app/interfaces";
+import serviceApi from "@/plugins/redux/service";
+
 import { type ILoginResponse, type ILoginBody } from "./interfaces";
 
 export const authApi = serviceApi.injectEndpoints({
   endpoints: (builder) => ({
     authLogin: builder.mutation<ILoginResponse, IAppBody<ILoginBody>>({
-      query: ({ body }) => ({
-        body,
-        url: "/auth/login",
-        method: "POST",
-      }),
       transformResponse: ({ data }) => {
         const { accessToken, userData } = data;
         return {
@@ -20,6 +15,11 @@ export const authApi = serviceApi.injectEndpoints({
           userData,
         };
       },
+      query: ({ body }) => ({
+        url: "/auth/login",
+        method: "POST",
+        body,
+      }),
     }),
   }),
   overrideExisting: false,

@@ -8,11 +8,11 @@ interface ModalMethods {
   // Checks if a modal with the specified modalId is currently open
   isOpenModal: (modalId: string) => boolean;
 
-  // Opens the modal with the specified modalId
-  openModal: (modalId: string) => void;
-
   // Closes the modal with the specified modalId
   closeModal: (modalId: string) => void;
+
+  // Opens the modal with the specified modalId
+  openModal: (modalId: string) => void;
 }
 
 /**
@@ -41,7 +41,7 @@ export const useModal = (data: ModalsState): ModalMethods => {
 
   return {
     isOpenModal,
-    openModal,
     closeModal,
+    openModal,
   };
 };

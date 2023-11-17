@@ -1,19 +1,17 @@
 "use client";
 
-// React
-import React, { useEffect } from "react";
-
+// Custom hooks
+import { useAppSelector, useToast } from "@/features/app/hooks";
 // Components
 import { AppImage, AppText } from "@/features/app/components";
+// React
+import React, { useEffect } from "react";
 
 // CVA
 import { toast } from "./cva";
 
-// Custom hooks
-import { useAppSelector, useToast } from "@/features/app/hooks";
-
 const AppToast: React.FC = () => {
-  const { show, type, title, description } = useAppSelector(
+  const { description, title, show, type } = useAppSelector(
     ({ popup }) => popup.popup.toast
   );
   const toastClassName = toast({ type });
@@ -47,12 +45,12 @@ const AppToast: React.FC = () => {
             <AppText>{description}</AppText>
           </div>
           <AppImage
-            onClick={onClose}
-            className="toast__close"
             src="/svg/icon-close-16x16.svg"
+            className="toast__close"
+            onClick={onClose}
             alt="Toast"
-            width={16}
             height={16}
+            width={16}
           />
         </div>
       )}

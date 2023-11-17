@@ -1,25 +1,12 @@
 // CVA
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 
 export const text = cva("text", {
   variants: {
-    size: {
-      xsmall: ["text--xsmall"],
-      small: ["text--small"],
-      medium: ["text--medium"],
-      large: ["text--large"],
-      xlarge: ["text--xlarge"],
-      "2xlarge": ["text--2xlarge"],
-    },
     color: {
-      primary: ["color-primary"],
       secondary: ["color-secondary"],
-      success: ["color-success"],
-      danger: ["color-danger"],
-      info: ["color-info"],
-      warning: ["color-warning"],
-      facebook: ["color-facebook"],
-      spotify: ["color-spotify"],
+      blank: ["color-transparent"],
+      facebook: ["color-facebook"], // Oke
       "white-1": ["color-white-1"],
       "dark-1": ["color-dark-1"],
       "gray-1": ["color-gray-1"],
@@ -27,52 +14,65 @@ export const text = cva("text", {
       "gray-3": ["color-gray-3"],
       "gray-4": ["color-gray-4"],
       "gray-5": ["color-gray-5"],
-      blank: ["color-transparent"],
+      primary: ["color-primary"],
+      spotify: ["color-spotify"],
+      success: ["color-success"],
+      warning: ["color-warning"],
+      danger: ["color-danger"],
+      info: ["color-info"],
+    },
+    size: {
+      "2xlarge": ["text--2xlarge"],
+      medium: ["text--medium"],
+      xlarge: ["text--xlarge"],
+      xsmall: ["text--xsmall"],
+      large: ["text--large"],
+      small: ["text--small"],
     },
     weight: {
-      normal: ["text--normal"],
       semibold: ["text--semibold"],
-      bold: ["text--bold"],
-      xbold: ["text--xbold"],
       "2xbold": ["text--2xbold"],
+      normal: ["text--normal"],
+      xbold: ["text--xbold"],
+      bold: ["text--bold"],
     },
   },
 });
 
 type IAppColorProps =
-  | "primary"
   | "secondary"
-  | "success"
-  | "danger"
-  | "info"
-  | "warning"
   | "facebook"
+  | "primary"
   | "spotify"
+  | "success"
+  | "warning"
   | "white-1"
+  | "danger"
   | "dark-1"
   | "gray-1"
   | "gray-2"
   | "gray-3"
   | "gray-4"
   | "gray-5"
-  | "blank";
+  | "blank"
+  | "info";
 
 // Interfaces
 export interface IAppTextProps extends VariantProps<typeof text> {
   /**
-   * Class default attribute
+   * Size of the text
    */
-  className?: string;
+  size?: "2xlarge" | "medium" | "xlarge" | "xsmall" | "large" | "small";
+
+  /**
+   * Weight of the text
+   */
+  weight?: "semibold" | "2xbold" | "normal" | "xbold" | "bold";
 
   /**
    * Children default attribute
    */
-  children: string | number;
-
-  /**
-   * Size of the text
-   */
-  size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "2xlarge";
+  children: number | string;
 
   /**
    * Color of the text
@@ -80,7 +80,7 @@ export interface IAppTextProps extends VariantProps<typeof text> {
   color?: IAppColorProps;
 
   /**
-   * Weight of the text
+   * Class default attribute
    */
-  weight?: "normal" | "bold" | "semibold" | "xbold" | "2xbold";
+  className?: string;
 }

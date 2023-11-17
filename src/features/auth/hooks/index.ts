@@ -1,8 +1,8 @@
 // RTK
-import { useAuthLoginMutation } from "../redux/rtk";
-
 // Custom hook
 import { useAppSelector } from "@/features/app/hooks/index";
+
+import { useAuthLoginMutation } from "../redux/rtk";
 
 export const useAuth = () => {
   const authState = useAppSelector((state) => state.auth.auth);
@@ -10,11 +10,11 @@ export const useAuth = () => {
   const [authLogin, { isLoading: authLoginIsLoading }] = useAuthLoginMutation();
 
   return {
-    // State
-    authState,
+    authLoginIsLoading,
 
     // Login
     authLogin,
-    authLoginIsLoading,
+    // State
+    authState,
   };
 };

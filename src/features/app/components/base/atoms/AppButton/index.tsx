@@ -1,39 +1,38 @@
 "use client";
 
+// Components
+import { AppImage } from "@/features/app/components";
 // React
 import React, { useCallback } from "react";
 
-// Components
-import { AppImage } from "@/features/app/components";
-
 // CVA
-import { button, type IAppButtonProps } from "./cva";
+import { type IAppButtonProps, button } from "./cva";
 
 /**
  * Base button component
  */
 const AppButton: React.FC<IAppButtonProps> = ({
-  children,
-  className,
   rounded = "small",
-  variant,
-  size = "medium",
-  disabled,
-  block,
   loading = false,
-  width,
-  height,
-  icon,
+  size = "medium",
   type = "button",
+  className,
+  children,
+  disabled,
   onClick,
+  variant,
+  height,
+  block,
+  width,
+  icon,
 }) => {
   const buttonClassName = button({
     className,
+    loading,
     rounded,
     variant,
-    size,
     block,
-    loading,
+    size,
   });
 
   /**
@@ -50,28 +49,28 @@ const AppButton: React.FC<IAppButtonProps> = ({
 
   return (
     <button
-      onClick={onClickButton}
       className={buttonClassName}
-      style={{ width, height }}
+      style={{ height, width }}
+      onClick={onClickButton}
       disabled={disabled}
       type={type}
     >
       {icon !== undefined && !loading && (
         <AppImage
-          src={icon}
           className="mr-3"
           alt="Icon SVG"
-          width={24}
           height={24}
+          src={icon}
+          width={24}
         />
       )}
       {loading && (
         <AppImage
-          className="btn__loading"
           src="/svg/rolling-0.8s-24px.svg"
-          width={24}
-          height={24}
+          className="btn__loading"
           alt="Loading SVG"
+          height={24}
+          width={24}
           priority
         />
       )}

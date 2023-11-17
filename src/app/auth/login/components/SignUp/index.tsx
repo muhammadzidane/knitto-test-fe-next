@@ -1,21 +1,20 @@
 // Next
-import Link from "next/link";
-
 // Components
 import { AppButton, AppText } from "@/features/app/components";
+import Link from "next/link";
 
 const SignUp: React.FC = () => (
   <div>
-    <AppText className="text--center" size="large" weight="2xbold">
+    <AppText className="text--center" weight="2xbold" size="large">
       Don&apos;t have an account?
     </AppText>
 
     <Link href="/signup">
       <AppButton
         className="mt-5"
+        rounded="large"
         variant="blank"
         size="large"
-        rounded="large"
         block
       >
         SIGN UP FOR SPOTIFY

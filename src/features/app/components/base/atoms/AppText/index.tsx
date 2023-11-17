@@ -2,19 +2,19 @@
 import React from "react";
 
 // CVA
-import { text, type IAppTextProps } from "./cva";
+import { type IAppTextProps, text } from "./cva";
 
 /**
  * Base text component
  */
 const AppText: React.FC<IAppTextProps> = ({
-  children,
-  className,
-  size = "medium",
-  color,
   weight = "normal",
+  size = "medium",
+  className,
+  children,
+  color,
 }) => {
-  const textClassName = text({ className, size, color, weight });
+  const textClassName = text({ className, weight, color, size });
 
   return <div className={textClassName}>{children}</div>;
 };

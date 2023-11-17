@@ -1,32 +1,21 @@
 // Next Auth
-import { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { type NextAuthOptions } from "next-auth";
 
 export const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
-      credentials: {
-        user: {
-          label: "User",
-          type: "text",
-        },
-        password: {
-          label: "Password",
-          type: "password",
-        },
-      },
       async authorize(credentials) {
         const baseUrl = process.env.NEXT_PUBLIC_MOCK_APIARY_API;
         const response = await fetch(`${baseUrl}/auth/login`, {
-          method: "post",
+          body: JSON.stringify({
+            password: credentials?.password,
+            user: credentials?.user,
+          }),
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            user: credentials?.user,
-            password: credentials?.password,
-          }),
+          method: "post",
         });
         const dataResponse = await response.json();
 
@@ -38,15 +27,26 @@ export const options: NextAuthOptions = {
         }
         throw new Error(dataResponse.message);
       },
+      credentials: {
+        password: {
+          label: "Password",
+          type: "password",
+        },
+        user: {
+          label: "User",
+          type: "text",
+        },
+      },
+      name: "Credentials",
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
-      return { ...token, ...user };
-    },
     async session({ session, token }) {
       session.user = token;
       return session;
+    },
+    async jwt({ token, user }) {
+      return { ...token, ...user };
     },
   },
   pages: {

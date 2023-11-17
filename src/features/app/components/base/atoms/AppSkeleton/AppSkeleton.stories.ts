@@ -1,5 +1,5 @@
 // Storybook
-import type { Meta, StoryObj } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 // Components
 import AppSkeleton from "../AppSkeleton";
@@ -8,11 +8,11 @@ import AppSkeleton from "../AppSkeleton";
  * Base skeleton loading component
  */
 const meta = {
-  title: "Example/AppSkeleton",
-  component: AppSkeleton,
   parameters: {
     layout: "centered",
   },
+  title: "Example/AppSkeleton",
+  component: AppSkeleton,
   tags: ["autodocs"],
 } satisfies Meta<typeof AppSkeleton>;
 
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: "400px",
     height: "24px",
+    width: "400px",
   },
 };

@@ -6,9 +6,24 @@ export const input = cva("input", {
 
 export interface IAppInputProps extends VariantProps<typeof input> {
   /**
+   * Error message of the input
+   */
+  errorMessage?: string;
+
+  /**
+   * Default placeholder attribute
+   */
+  placeholder?: string;
+
+  /**
    * Default class attribute
    */
   className?: string;
+
+  /**
+   * Label of the input
+   */
+  label?: string;
 
   /**
    * Default name attribute
@@ -19,19 +34,4 @@ export interface IAppInputProps extends VariantProps<typeof input> {
    * Default type attribute
    */
   type: string;
-
-  /**
-   * Default placeholder attribute
-   */
-  placeholder?: string;
-
-  /**
-   * Label of the input
-   */
-  label?: string;
-
-  /**
-   * Error message of the input
-   */
-  errorMessage?: string;
 }

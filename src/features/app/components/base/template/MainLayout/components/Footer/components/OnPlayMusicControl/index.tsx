@@ -11,45 +11,45 @@ const OnPlayMusicControl: React.FC = () => {
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-shuffle-24x24.svg"
-            width={24}
-            height={24}
             alt="shuffle"
+            height={24}
+            width={24}
           />
         </AppButton>
 
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-previous-play-16x16.svg"
-            width={16}
-            height={16}
             alt="shuffle"
+            height={16}
+            width={16}
           />
         </AppButton>
 
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-pause-button-24x24.svg"
-            width={24}
-            height={24}
             alt="shuffle"
+            height={24}
+            width={24}
           />
         </AppButton>
 
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-next-play-16x16.svg"
-            width={16}
-            height={16}
             alt="shuffle"
+            height={16}
+            width={16}
           />
         </AppButton>
 
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-repeat-16x16.svg"
-            width={16}
-            height={16}
             alt="shuffle"
+            height={16}
+            width={16}
           />
         </AppButton>
       </div>

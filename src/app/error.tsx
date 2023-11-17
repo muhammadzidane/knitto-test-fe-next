@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const GlobalError = ({ error, reset }: { error: Error; reset: () => void }) => {
+const GlobalError = ({ error, reset }: { reset: () => void; error: Error }) => {
   useEffect(() => {
     console.error(error);
   }, [error]);

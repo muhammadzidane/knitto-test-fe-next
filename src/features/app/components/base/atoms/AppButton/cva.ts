@@ -6,104 +6,77 @@ import { type VariantProps, cva } from "class-variance-authority";
 
 export const button = cva("btn", {
   variants: {
-    rounded: {
-      small: ["btn--rounded-small"],
-      large: ["btn--rounded-large"],
-    },
     variant: {
-      plain: ["btn--plain"],
-      primary: ["btn--primary"],
       secondary: ["btn--secondary"],
-      success: ["btn--success"],
-      danger: ["btn--danger"],
-      info: ["btn--info"],
-      warning: ["btn--warning"],
+      blank: ["btn--transparent"],
       facebook: ["btn--facebook"],
-      spotify: ["btn--spotify"],
       "dark-1": ["btn--dark-1"],
       "dark-4": ["btn--dark-4"],
       "gray-5": ["btn--gray-5"],
-      blank: ["btn--transparent"],
+      primary: ["btn--primary"],
+      spotify: ["btn--spotify"],
+      success: ["btn--success"],
+      warning: ["btn--warning"],
+      danger: ["btn--danger"],
+      plain: ["btn--plain"],
+      info: ["btn--info"],
     },
     size: {
-      small: ["btn--small"],
       medium: ["btn--medium"],
       large: ["btn--large"],
+      small: ["btn--small"],
     },
-    block: {
-      true: ["btn--block"],
+    rounded: {
+      large: ["btn--rounded-large"],
+      small: ["btn--rounded-small"],
     },
     loading: {
       true: ["btn--loading"],
+    },
+    block: {
+      true: ["btn--block"],
     },
   },
 });
 
 export interface IAppButtonProps extends VariantProps<typeof button> {
   /**
-   * Children default attribute
-   */
-  children: string | React.ReactNode;
-
-  /**
    * Variants attribute
    */
   variant?:
-    | "plain"
-    | "primary"
     | "secondary"
-    | "success"
-    | "danger"
-    | "info"
-    | "warning"
     | "facebook"
+    | "primary"
     | "spotify"
+    | "success"
+    | "warning"
+    | "danger"
     | "dark-1"
     | "dark-4"
     | "gray-5"
-    | "blank";
+    | "blank"
+    | "plain"
+    | "info";
 
   /**
-   * Class default attribute
+   * Handle click
    */
-  className?: string;
-
-  /**
-   * Rounded of the button
-   */
-  rounded?: "small" | "large";
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 
   /**
    * Size of the button
    */
-  size?: "small" | "medium" | "large";
+  size?: "medium" | "large" | "small";
 
   /**
-   * Disable button
+   * Children default attribute
    */
-  disabled?: boolean;
-
-  block?: boolean;
+  children: React.ReactNode | string;
 
   /**
-   * Loading of the button
+   * Rounded of the button
    */
-  loading?: boolean;
-
-  /**
-   * Width of the button
-   */
-  width?: string;
-
-  /**
-   * Height of the button
-   */
-  height?: string;
-
-  /**
-   * Icon of the button (set on left)
-   */
-  icon?: string;
+  rounded?: "large" | "small";
 
   /**
    * Type of the button
@@ -111,7 +84,34 @@ export interface IAppButtonProps extends VariantProps<typeof button> {
   type?: "button" | "submit";
 
   /**
-   * Handle click
+   * Class default attribute
    */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+
+  /**
+   * Disable button
+   */
+  disabled?: boolean;
+
+  /**
+   * Loading of the button
+   */
+  loading?: boolean;
+
+  block?: boolean;
+
+  /**
+   * Height of the button
+   */
+  height?: string;
+
+  /**
+   * Width of the button
+   */
+  width?: string;
+
+  /**
+   * Icon of the button (set on left)
+   */
+  icon?: string;
 }
