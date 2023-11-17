@@ -1,11 +1,12 @@
 "use client";
 
-// Custom hooks
-import { useAppSelector, useToast } from "@/features/app/hooks";
-// Components
-import { AppImage, AppText } from "@/features/app/components";
 // React
 import React, { useEffect } from "react";
+
+// Components
+import { AppImage, AppText } from "@/features/app/components";
+// Custom hooks
+import { useAppSelector, useToast } from "@/features/app/hooks";
 
 // CVA
 import { toast } from "./cva";

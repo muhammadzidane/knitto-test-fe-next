@@ -1,9 +1,6 @@
 // React
 import React from "react";
 
-// React SVG
-// import { ReactSVG } from "react-svg";
-
 // Components
 import { AppImage, AppText } from "@/features/app/components";
 

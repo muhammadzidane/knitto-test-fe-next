@@ -1,9 +1,7 @@
-// React
-// Components
-import { AppImage, AppText } from "@/features/app/components";
 import React from "react";
 
-// Interfaces
+import { AppImage, AppText } from "@/features/app/components";
+
 import { type ISidebarPlaylist } from "./interfaces";
 
 const SidebarPlaylist: React.FC<ISidebarPlaylist> = ({

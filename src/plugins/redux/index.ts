@@ -1,4 +1,6 @@
 // Redux Toolkit
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 // Redux Persist
 import {
   persistReducer,
@@ -10,16 +12,15 @@ import {
   PAUSE,
   PURGE,
 } from "redux-persist";
-import { setupListeners } from "@reduxjs/toolkit/query";
-// API
-import { authApi } from "@/features/auth/redux/rtk";
-import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 
-// Middlewares
-import { rtkQueryErrorLoggerMiddleware } from "./middleware";
+// API
+import { authApi } from "@/features/auth/redux/rtk";
+
 // Reducers
 import { reducers } from "./combineReducer";
+// Middlewares
+import { rtkQueryErrorLoggerMiddleware } from "./middleware";
 
 // Config for Redux Persist
 const persistConfig = {

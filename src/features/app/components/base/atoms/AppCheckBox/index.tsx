@@ -1,7 +1,8 @@
 // React
+import React from "react";
+
 // Components
 import { AppText } from "@/features/app/components";
-import React from "react";
 
 // Interfaces
 import { type IAppCheckBoxProps } from "./interfaces";

@@ -1,9 +1,10 @@
 "use client";
 
-// Components
-import { AppImage } from "@/features/app/components";
 // React
 import React, { useCallback } from "react";
+
+// Components
+import { AppImage } from "@/features/app/components";
 
 // CVA
 import { type IAppButtonProps, button } from "./cva";

@@ -1,11 +1,13 @@
 "use client";
 
-// Interfaces
-import { type IAppChildrenProps } from "@/features/app/interfaces";
-// Next Auth
-import { SessionProvider } from "next-auth/react";
 // React
 import React from "react";
+
+// Next Auth
+import { SessionProvider } from "next-auth/react";
+
+// Interfaces
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
 const NextAuthProvider: React.FC<IAppChildrenProps> = ({ children }) => (
   <SessionProvider>{children}</SessionProvider>

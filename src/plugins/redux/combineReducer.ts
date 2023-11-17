@@ -1,10 +1,8 @@
-// Redux toolkit
-// Slices
-import { popupSlice } from "@/features/app/redux/slice/popupSlice";
-import { authSlice } from "@/features/auth/redux/slice";
-// RTK
-import { authApi } from "@/features/auth/redux/rtk";
 import { combineReducers } from "@reduxjs/toolkit";
+
+import { popupSlice } from "@/features/app/redux/slice/popupSlice";
+import { authApi } from "@/features/auth/redux/rtk";
+import { authSlice } from "@/features/auth/redux/slice";
 
 const plainReducers = {
   [authApi.reducerPath]: authApi.reducer,

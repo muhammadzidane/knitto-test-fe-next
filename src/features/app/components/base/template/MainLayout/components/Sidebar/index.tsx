@@ -1,5 +1,6 @@
-import { useHome } from "@/features/home/hooks";
 import { useEffect } from "react";
+
+import { useHome } from "@/features/home/hooks";
 
 // Components
 import {

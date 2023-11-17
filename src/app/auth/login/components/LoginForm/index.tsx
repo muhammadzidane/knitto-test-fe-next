@@ -1,23 +1,20 @@
-// React
-// Components
+import React, { useCallback, useState } from "react";
+
+import { Formik, Field, Form } from "formik";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import * as Yup from "yup";
+
 import {
   AppCheckBox,
   AppButton,
   AppInput,
   AppText,
 } from "@/features/app/components";
-import React, { useCallback, useState } from "react";
 import { useToast } from "@/features/app/hooks";
-// Formik & Yup
-import { Formik, Field, Form } from "formik";
-// Next
-import { useRouter } from "next/navigation";
-// Next Auth
-import { signIn } from "next-auth/react";
-import * as Yup from "yup";
+import { type IAppResetForm } from "@/features/app/interfaces";
 
-// Interfaces
-import { type ILoginValues, type IAction } from "./interfaces";
+import { type ILoginValues } from "./interfaces";
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
@@ -32,7 +29,10 @@ const LoginForm: React.FC = () => {
    * @returns A Promise that resolves to void.
    */
   const onSubmitForm = useCallback(
-    async (values: ILoginValues, { resetForm }: IAction): Promise<void> => {
+    async (
+      values: ILoginValues,
+      { resetForm }: IAppResetForm
+    ): Promise<void> => {
       setLoading(true);
 
       const response = await signIn("credentials", {

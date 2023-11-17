@@ -1,7 +1,8 @@
 // React
+import React from "react";
+
 // Components
 import { AppButton, AppText } from "@/features/app/components";
-import React from "react";
 
 const LoginSosmed: React.FC = () => (
   <>
