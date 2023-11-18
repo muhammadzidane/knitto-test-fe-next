@@ -1,9 +1,10 @@
 // Redux toolkit
 import type { Middleware } from "@reduxjs/toolkit";
 
+import { isRejectedWithValue } from "@reduxjs/toolkit";
+
 // Toast
 import { popupShowToast } from "@/features/app/redux/slice/popupSlice";
-import { isRejectedWithValue } from "@reduxjs/toolkit";
 
 /**
  * Log a warning and show a toast!

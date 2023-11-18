@@ -1,6 +1,5 @@
 "use client";
 
-// Interfaces
 import { type IAppSkeletonProps, skeleton } from "./cva";
 
 const AppSkeleton: React.FC<IAppSkeletonProps> = ({

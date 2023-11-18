@@ -1,7 +1,6 @@
-// Next
-// Components
-import { AppButton, AppText } from "@/features/app/components";
 import Link from "next/link";
+
+import { AppButton, AppText } from "@/features/app/components";
 
 const SignUp: React.FC = () => (
   <div>

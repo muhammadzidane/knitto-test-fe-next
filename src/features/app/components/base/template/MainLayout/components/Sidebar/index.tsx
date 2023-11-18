@@ -1,7 +1,7 @@
-import { useHome } from "@/features/home/hooks";
 import { useEffect } from "react";
 
-// Components
+import { useHome } from "@/features/home/hooks";
+
 import {
   SidebarPlaylistLoading,
   SidebarPlaylist,

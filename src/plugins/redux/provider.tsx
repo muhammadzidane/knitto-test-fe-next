@@ -1,12 +1,11 @@
 "use client";
 
-// Interfaces
-import { type IAppChildrenProps } from "@/features/app/interfaces";
-import { PersistGate } from "redux-persist/integration/react";
-// Components
-import { AppToast } from "@/features/app/components";
 // Provider
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+
+import { AppToast } from "@/features/app/components";
+import { type IAppChildrenProps } from "@/features/app/interfaces";
 
 // Store
 import { persistor, store } from ".";

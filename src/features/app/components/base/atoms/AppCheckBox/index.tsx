@@ -1,9 +1,7 @@
-// React
-// Components
-import { AppText } from "@/features/app/components";
 import React from "react";
 
-// Interfaces
+import { AppText } from "@/features/app/components";
+
 import { type IAppCheckBoxProps } from "./interfaces";
 
 const AppCheckBox: React.FC<IAppCheckBoxProps> = ({ label, ...props }) => (

@@ -1,7 +1,5 @@
-// Components
 import { AppText } from "@/features/app/components";
 
-// Interfaces
 import { type IItemWithIconProps } from "./interfaces";
 
 const ItemWithIcon: React.FC<IItemWithIconProps> = ({

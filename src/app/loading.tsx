@@ -1,4 +1,3 @@
-// Components
 import { AppImage } from "@/features/app/components";
 
 const Loading = () => (

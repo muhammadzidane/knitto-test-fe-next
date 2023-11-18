@@ -46,7 +46,47 @@
         "checksVoidReturn": false
       }
     ],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "groups": [
+          "react",
+          "type",
+          "next",
+          ["builtin", "external"],
+          "internal-type",
+          "internal",
+          ["parent-type", "sibling-type", "index-type"],
+          ["parent", "sibling", "index"],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {
+            "react": ["react"]
+          },
+          "type": {
+            "react": "react"
+          }
+        },
+        "internal-pattern": [
+          "@/features/**",
+          "@/plugins/**"
+        ]
+      }
+    ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        "type": "line-length",
+        "order": "desc",
+        "groups": ["callback"],
+        "custom-groups": {
+          "callback": "on*"
+        }
+      }
+    ]
   },
   "ignorePatterns": ["next.config.js", "coverage"],
   "root": true

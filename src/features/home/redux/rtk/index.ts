@@ -1,5 +1,5 @@
 // Service
-// Interfaces
+
 import {
   type IAppResponse,
   type IAppParams,

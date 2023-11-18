@@ -1,8 +1,10 @@
 "use client";
 
-import { MainLayout, AppButton, AppText } from "@/features/app/components";
-import { signOut } from "next-auth/react";
 import { useState } from "react";
+
+import { signOut } from "next-auth/react";
+
+import { MainLayout, AppButton, AppText } from "@/features/app/components";
 
 const Home: React.FC = () => {
   const [counter, setCounter] = useState<number>(0);

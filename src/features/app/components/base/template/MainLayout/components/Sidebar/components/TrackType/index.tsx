@@ -1,7 +1,6 @@
-// React
-// Components
-import { AppButton, AppText } from "@/features/app/components";
 import React from "react";
+
+import { AppButton, AppText } from "@/features/app/components";
 
 const TrackType: React.FC = () => (
   <div className="d-flex gap-2 px-1">

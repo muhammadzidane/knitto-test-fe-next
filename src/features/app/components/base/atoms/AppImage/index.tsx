@@ -1,4 +1,3 @@
-// Next
 import Image, { type ImageProps } from "next/image";
 
 /**
