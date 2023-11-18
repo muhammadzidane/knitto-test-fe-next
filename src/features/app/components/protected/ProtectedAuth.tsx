@@ -2,11 +2,9 @@
 
 import { useEffect } from "react";
 
-// Next
-import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
-// Interfaces
 import { type IAppChildrenProps } from "../../interfaces";
 
 const ProtectedAuth: React.FC<IAppChildrenProps> = ({ children }) => {

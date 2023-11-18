@@ -1,7 +1,5 @@
-// React
 import React from "react";
 
-// React SVG
 // import { ReactSVG } from "react-svg";
 
 const OnPlayMusicSetting: React.FC = () => (

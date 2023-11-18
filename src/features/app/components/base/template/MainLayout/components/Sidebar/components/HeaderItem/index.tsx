@@ -1,10 +1,7 @@
-// React
 import React from "react";
 
-// Components
 import { AppImage, AppText } from "@/features/app/components";
 
-// Interfaces
 import { type IHeaderItemProps } from "./interfaces";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

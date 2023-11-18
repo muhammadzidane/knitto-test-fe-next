@@ -1,4 +1,3 @@
-// React
 import type React from "react";
 
 // CVA

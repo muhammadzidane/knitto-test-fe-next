@@ -1,4 +1,3 @@
-// Next Auth
 import NextAuth from "next-auth";
 
 // Options

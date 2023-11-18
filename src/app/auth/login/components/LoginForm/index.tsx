@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
 
 import { Formik, Field, Form } from "formik";
-import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 
 import {
@@ -64,12 +64,12 @@ const LoginForm: React.FC = () => {
 
   return (
     <Formik
+      onSubmit={onSubmitForm}
       initialValues={{
         password: "",
         user: "",
       }}
       validationSchema={validationSchema}
-      onSubmit={onSubmitForm}
     >
       {({ touched, errors }) => (
         <Form className="login__form">

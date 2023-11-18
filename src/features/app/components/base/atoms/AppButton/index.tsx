@@ -1,9 +1,7 @@
 "use client";
 
-// React
 import React, { useCallback } from "react";
 
-// Components
 import { AppImage } from "@/features/app/components";
 
 // CVA
@@ -50,9 +48,9 @@ const AppButton: React.FC<IAppButtonProps> = ({
 
   return (
     <button
+      onClick={onClickButton}
       className={buttonClassName}
       style={{ height, width }}
-      onClick={onClickButton}
       disabled={disabled}
       type={type}
     >

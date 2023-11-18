@@ -47,12 +47,9 @@
       }
     ],
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    
     "perfectionist/sort-imports": [
       "error",
       {
-        "type": "natural",
-        "order": "asc",
         "groups": [
           "react",
           "type",
@@ -77,6 +74,17 @@
           "@/features/**",
           "@/plugins/**"
         ]
+      }
+    ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        "type": "line-length",
+        "order": "desc",
+        "groups": ["callback"],
+        "custom-groups": {
+          "callback": "on*"
+        }
       }
     ]
   },

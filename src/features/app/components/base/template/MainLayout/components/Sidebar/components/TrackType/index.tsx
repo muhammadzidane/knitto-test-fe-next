@@ -1,7 +1,5 @@
-// React
 import React from "react";
 
-// Components
 import { AppButton, AppText } from "@/features/app/components";
 
 const TrackType: React.FC = () => (

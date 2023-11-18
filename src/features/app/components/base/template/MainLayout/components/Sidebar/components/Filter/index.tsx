@@ -1,4 +1,3 @@
-// Components
 import { AppImage, AppText } from "@/features/app/components";
 
 const Filter: React.FC = () => (

@@ -1,5 +1,5 @@
 // Service
-// Interfaces
+
 import { type IAppBody } from "@/features/app/interfaces";
 import serviceApi from "@/plugins/redux/service";
 

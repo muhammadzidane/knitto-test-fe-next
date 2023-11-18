@@ -1,7 +1,3 @@
-// React SVG
-// import { ReactSVG } from "react-svg";
-
-// Components
 import { AppButton, AppImage, AppText } from "@/features/app/components";
 
 const OnPlayMusicControl: React.FC = () => {

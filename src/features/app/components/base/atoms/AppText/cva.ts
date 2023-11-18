@@ -57,7 +57,6 @@ type IAppColorProps =
   | "blank"
   | "info";
 
-// Interfaces
 export interface IAppTextProps extends VariantProps<typeof text> {
   /**
    * Size of the text

@@ -1,5 +1,3 @@
-// Components
-// Interfaces
 import { type IAppChildrenProps } from "@/features/app/interfaces";
 
 import { Content, Navbar } from "./components";

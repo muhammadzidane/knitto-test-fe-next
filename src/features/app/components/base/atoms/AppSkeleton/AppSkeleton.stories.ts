@@ -1,7 +1,6 @@
 // Storybook
 import type { StoryObj, Meta } from "@storybook/react";
 
-// Components
 import AppSkeleton from "../AppSkeleton";
 
 /**

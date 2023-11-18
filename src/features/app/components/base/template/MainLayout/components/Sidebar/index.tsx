@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import { useHome } from "@/features/home/hooks";
 
-// Components
 import {
   SidebarPlaylistLoading,
   SidebarPlaylist,

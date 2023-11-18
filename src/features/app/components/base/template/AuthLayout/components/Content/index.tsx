@@ -1,9 +1,7 @@
 "use client";
 
-// React
 import React from "react";
 
-// Interfaces
 import { type IAppChildrenProps } from "@/features/app/interfaces";
 
 const Content: React.FC<IAppChildrenProps> = ({ children }) => (

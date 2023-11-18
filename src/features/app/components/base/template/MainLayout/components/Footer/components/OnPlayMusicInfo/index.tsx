@@ -1,9 +1,7 @@
-// React
 import React from "react";
 
-// Components
-import { AppText } from "@/features/app/components";
 // import { ReactSVG } from "react-svg";
+import { AppText } from "@/features/app/components";
 
 const OnPlayMusicInfo: React.FC = () => {
   const image =
