@@ -1,7 +1,6 @@
 @import "@/assets/styles/sass/colors.scss";
 
 $btn-padding: 4px 15px;
-$btn-font-size: 12px;
 $btn-border: none;
 $btn-transition: background-color 0.3s ease;
 
@@ -14,9 +13,11 @@ $btn-sizes: (
   small: (
     padding: 3px 8px,
     height: 26px,
+    font-size: 11px,
   ),
   medium: (
     padding: $btn-padding,
+    font-size: 14px,
     height: 32px,
   ),
   large: (
@@ -24,12 +25,12 @@ $btn-sizes: (
     line-height: 2,
     padding: 4px 15px,
     height: 48px,
+    letter-spacing: 2px,
   ),
 );
 
 .btn {
   padding: $btn-padding;
-  font-size: $btn-font-size;
   border: $btn-border;
   height: 32px;
   border-radius: map-get($btn-rounded, small);
@@ -38,8 +39,11 @@ $btn-sizes: (
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 2px;
   overflow: hidden;
+
+  & span {
+    display: flex;
+  }
 
   &--block {
     width: 100%;
@@ -159,6 +163,8 @@ $btn-sizes: (
   &--plain {
     background-color: transparent;
     padding: 0 !important;
+    width: auto;
+    height: fit-content !important;
   }
 
   @each $name, $size in $btn-rounded {

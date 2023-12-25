@@ -86,17 +86,13 @@ $space-values: (
   }
 }
 
+// Full ey
 .w-full {
   width: 100%;
 }
 
 .h-full {
   height: 100%;
-}
-
-// Grid
-.d-grid {
-  display: grid;
 }
 
 @for $i from 1 through 20 {
@@ -119,7 +115,8 @@ $display-options: (
   table-cell,
   flex,
   inline-flex,
-  none
+  none,
+  grid
 );
 
 @each $option in $display-options {

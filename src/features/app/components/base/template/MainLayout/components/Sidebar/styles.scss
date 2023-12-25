@@ -1,0 +1,32 @@
+.app__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 330px;
+  height: calc(100vh - 10px);
+
+  .sidebar {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: var(--dark-3-color);
+      padding: 20px;
+      border-radius: 6px;
+      height: 112px;
+    }
+
+    &__content {
+      @extend .sidebar__header;
+      padding: 10px;
+      height: calc(100%);
+    }
+
+    &__playlists {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      width: auto;
+      height: calc(100% - 170px);
+    }
+  }
+}

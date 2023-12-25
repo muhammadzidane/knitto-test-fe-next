@@ -2,11 +2,13 @@ import React from "react";
 
 import { AppButton, AppText } from "@/features/app/components";
 
+import "./styles.scss";
+
 const LoginSosmed: React.FC = () => (
   <>
-    <div className="login__sosmed">
+    <div className="d-flex flex-column gap-3">
       <AppButton
-        icon="/svg/icon-facebook-circle-white.svg"
+        icon="icon-facebook-circle-white"
         variant="facebook"
         rounded="large"
         size="large"
@@ -15,7 +17,7 @@ const LoginSosmed: React.FC = () => (
       </AppButton>
 
       <AppButton
-        icon="/svg/icon-apple-white.svg"
+        icon="icon-apple-white"
         variant="dark-1"
         rounded="large"
         size="large"
@@ -24,7 +26,7 @@ const LoginSosmed: React.FC = () => (
       </AppButton>
 
       <AppButton
-        icon="/svg/icon-google.svg"
+        icon="icon-google"
         rounded="large"
         variant="blank"
         size="large"

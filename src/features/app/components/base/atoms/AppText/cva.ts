@@ -6,7 +6,7 @@ export const text = cva("text", {
     color: {
       secondary: ["color-secondary"],
       blank: ["color-transparent"],
-      facebook: ["color-facebook"], // Oke
+      facebook: ["color-facebook"],
       "white-1": ["color-white-1"],
       "dark-1": ["color-dark-1"],
       "gray-1": ["color-gray-1"],

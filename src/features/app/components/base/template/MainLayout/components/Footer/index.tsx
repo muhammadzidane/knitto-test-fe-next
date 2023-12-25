@@ -5,6 +5,7 @@ import {
   OnPlayMusicSetting,
   OnPlayMusicInfo,
 } from "./components";
+import "./styles.scss";
 
 const Footer: React.FC = () => (
   <div className="app__footer">

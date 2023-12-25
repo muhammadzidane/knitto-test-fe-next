@@ -26,8 +26,8 @@ const OnPlayMusicControl: React.FC = () => {
           <AppImage
             src="/svg/icon-pause-button.svg"
             alt="shuffle"
-            height={24}
-            width={24}
+            height={34}
+            width={34}
           />
         </AppButton>
 

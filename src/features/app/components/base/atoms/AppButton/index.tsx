@@ -54,12 +54,12 @@ const AppButton: React.FC<IAppButtonProps> = ({
       disabled={disabled}
       type={type}
     >
-      {icon !== undefined && !loading && (
+      {icon && !loading && (
         <AppImage
+          src={`/svg/${icon}.svg`}
           className="mr-3"
           alt="Icon SVG"
           height={24}
-          src={icon}
           width={24}
         />
       )}

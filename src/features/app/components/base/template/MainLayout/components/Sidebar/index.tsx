@@ -10,6 +10,7 @@ import {
   TrackType,
   Filter,
 } from "./components";
+import "./styles.scss";
 
 const Sidebar: React.FC = () => {
   const { homePlaylistsIsLoading, homePlaylistsData, homePlaylists } =
@@ -20,10 +21,10 @@ const Sidebar: React.FC = () => {
   }, [homePlaylists]);
 
   return (
-    <aside className="app__sidebar">
+    <div className="app__sidebar">
       <div className="sidebar__header">
-        <HeaderItem icon="/svg/icon-home-active.svg" title="Home" active />
-        <HeaderItem icon="/svg/icon-search-deactive.svg" title="Search" />
+        <HeaderItem icon="icon-home-active" title="Home" active />
+        <HeaderItem icon="icon-search-deactive" title="Search" />
       </div>
 
       <div className="sidebar__content">
@@ -49,7 +50,7 @@ const Sidebar: React.FC = () => {
           )}
         </div>
       </div>
-    </aside>
+    </div>
   );
 };
 

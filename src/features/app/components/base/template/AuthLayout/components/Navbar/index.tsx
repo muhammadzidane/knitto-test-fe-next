@@ -2,6 +2,8 @@
 
 import { AppImage } from "@/features/app/components";
 
+import "./styles.scss";
+
 const Navbar: React.FC = () => (
   <div className="login__navbar">
     <AppImage

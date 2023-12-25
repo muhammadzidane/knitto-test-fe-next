@@ -10,11 +10,6 @@ const YourLibrary: React.FC = () => (
         Your Library
       </AppText>
     </div>
-
-    {/* <div className="d-flex align-center gap-4">
-      <ReactSVG src="icon-add.svg" />
-      <ReactSVG src="icon-forward-navigation.svg" />
-    </div> */}
   </div>
 );
 
