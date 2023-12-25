@@ -19,7 +19,7 @@ const OnPlayMusicInfo: React.FC = () => {
           TWICE
         </AppText>
       </div>
-      {/* <ReactSVG src="icon-heath-24x24.svg" /> */}
+      {/* <ReactSVG src="icon-heath.svg" /> */}
     </div>
   );
 };

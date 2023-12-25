@@ -6,7 +6,7 @@ const LoginSosmed: React.FC = () => (
   <>
     <div className="login__sosmed">
       <AppButton
-        icon="/svg/facebook-circle-white-24x24.svg"
+        icon="/svg/icon-facebook-circle-white.svg"
         variant="facebook"
         rounded="large"
         size="large"
@@ -15,7 +15,7 @@ const LoginSosmed: React.FC = () => (
       </AppButton>
 
       <AppButton
-        icon="/svg/apple-white.svg"
+        icon="/svg/icon-apple-white.svg"
         variant="dark-1"
         rounded="large"
         size="large"
@@ -24,7 +24,7 @@ const LoginSosmed: React.FC = () => (
       </AppButton>
 
       <AppButton
-        icon="/svg/google.svg"
+        icon="/svg/icon-google.svg"
         rounded="large"
         variant="blank"
         size="large"

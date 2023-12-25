@@ -4,8 +4,8 @@ import React, { useCallback } from "react";
 
 import { AppImage } from "@/features/app/components";
 
-// CVA
 import { type IAppButtonProps, button } from "./cva";
+import "./styles.scss";
 
 /**
  * Base button component
@@ -65,7 +65,7 @@ const AppButton: React.FC<IAppButtonProps> = ({
       )}
       {loading && (
         <AppImage
-          src="/svg/rolling-0.8s-24px.svg"
+          src="/svg/icon-rolling-0.8s.svg"
           className="btn__loading"
           alt="Loading SVG"
           height={24}

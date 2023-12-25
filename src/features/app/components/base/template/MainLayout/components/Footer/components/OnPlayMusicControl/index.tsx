@@ -6,7 +6,7 @@ const OnPlayMusicControl: React.FC = () => {
       <div className="d-flex align-center gap-7">
         <AppButton variant="plain">
           <AppImage
-            src="/svg/icon-shuffle-24x24.svg"
+            src="/svg/icon-shuffle.svg"
             alt="shuffle"
             height={24}
             width={24}
@@ -15,7 +15,7 @@ const OnPlayMusicControl: React.FC = () => {
 
         <AppButton variant="plain">
           <AppImage
-            src="/svg/icon-previous-play-16x16.svg"
+            src="/svg/icon-previous-play.svg"
             alt="shuffle"
             height={16}
             width={16}
@@ -24,7 +24,7 @@ const OnPlayMusicControl: React.FC = () => {
 
         <AppButton variant="plain">
           <AppImage
-            src="/svg/icon-pause-button-24x24.svg"
+            src="/svg/icon-pause-button.svg"
             alt="shuffle"
             height={24}
             width={24}
@@ -33,7 +33,7 @@ const OnPlayMusicControl: React.FC = () => {
 
         <AppButton variant="plain">
           <AppImage
-            src="/svg/icon-next-play-16x16.svg"
+            src="/svg/icon-next-play.svg"
             alt="shuffle"
             height={16}
             width={16}
@@ -42,7 +42,7 @@ const OnPlayMusicControl: React.FC = () => {
 
         <AppButton variant="plain">
           <AppImage
-            src="/svg/icon-repeat-16x16.svg"
+            src="/svg/icon-repeat.svg"
             alt="shuffle"
             height={16}
             width={16}

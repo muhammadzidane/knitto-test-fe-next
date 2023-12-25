@@ -1,0 +1,184 @@
+@import "@/assets/styles/sass/colors.scss";
+
+$btn-padding: 4px 15px;
+$btn-font-size: 12px;
+$btn-border: none;
+$btn-transition: background-color 0.3s ease;
+
+$btn-rounded: (
+  small: 6px,
+  large: 25px,
+);
+
+$btn-sizes: (
+  small: (
+    padding: 3px 8px,
+    height: 26px,
+  ),
+  medium: (
+    padding: $btn-padding,
+    height: 32px,
+  ),
+  large: (
+    font-weight: 700,
+    line-height: 2,
+    padding: 4px 15px,
+    height: 48px,
+  ),
+);
+
+.btn {
+  padding: $btn-padding;
+  font-size: $btn-font-size;
+  border: $btn-border;
+  height: 32px;
+  border-radius: map-get($btn-rounded, small);
+  cursor: pointer;
+  transition: $btn-transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  overflow: hidden;
+
+  &--block {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled {
+    background-color: map-get($colors, info);
+    cursor: default;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: var(--gray-2-color);
+    border: 1px solid var(--gray-2-color);
+  }
+
+  &--loading,
+  &--icon {
+    opacity: 0.7;
+  }
+
+  &--loading {
+    span {
+      height: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__loading {
+    animation: slide-right 0.5s forwards;
+
+    @keyframes slide-right {
+      from {
+        opacity: 0;
+        margin-right: 0;
+      }
+      to {
+        opacity: 1;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &--primary {
+    background-color: var(--primary-color);
+    color: var(--white-1-color);
+  }
+
+  &--secondary {
+    background-color: var(--secondary-color);
+    color: var(--white-1-color);
+  }
+
+  &--success {
+    background-color: var(--success-color);
+    color: var(--white-1-color);
+  }
+
+  &--danger {
+    background-color: var(--danger-color);
+    color: var(--white-1-color);
+  }
+
+  &--info {
+    background-color: var(--info-color);
+    color: var(--white-1-color);
+  }
+
+  &--warning {
+    background-color: var(--warning-color);
+    color: var(--white-1-color);
+  }
+
+  &--facebook {
+    background-color: var(--facebook-color);
+    color: var(--white-1-color);
+  }
+
+  &--spotify {
+    background-color: var(--spotify-color);
+    color: var(--dark-1-color);
+  }
+
+  &--dark-1 {
+    background-color: var(--dark-1-color);
+    color: var(--white-1-color);
+  }
+
+  &--dark-2 {
+    background-color: var(--dark-2-color);
+    color: var(--white-1-color);
+  }
+
+  &--dark-3 {
+    background-color: var(--dark-3-);
+    color: var(--white-1-color);
+  }
+
+  &--dark-4 {
+    background-color: var(--dark-4-color);
+    color: var(--white-1-color);
+  }
+
+  &--gray-5 {
+    background-color: var(--gray-5-color);
+    color: var(--white-1-color);
+  }
+
+  &--plain {
+    background-color: transparent;
+    padding: 0 !important;
+  }
+
+  @each $name, $size in $btn-rounded {
+    &--rounded-#{$name} {
+      border-radius: $size;
+    }
+  }
+
+  @each $name, $style in $btn-sizes {
+    &--#{$name} {
+      @each $property, $value in $style {
+        #{$property}: $value;
+      }
+
+      @if ($name == "large") {
+        span:last-child {
+          font-size: 0.875rem;
+          font-family: "Circular Book", sans-serif;
+        }
+      }
+    }
+  }
+}

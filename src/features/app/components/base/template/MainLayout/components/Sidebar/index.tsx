@@ -22,12 +22,8 @@ const Sidebar: React.FC = () => {
   return (
     <aside className="app__sidebar">
       <div className="sidebar__header">
-        <HeaderItem
-          icon="/svg/icon-home-active-24x-24.svg"
-          title="Home"
-          active
-        />
-        <HeaderItem icon="/svg/icon-search-deactive-24x24.svg" title="Search" />
+        <HeaderItem icon="/svg/icon-home-active.svg" title="Home" active />
+        <HeaderItem icon="/svg/icon-search-deactive.svg" title="Search" />
       </div>
 
       <div className="sidebar__content">

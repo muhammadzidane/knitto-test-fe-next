@@ -2,14 +2,15 @@
 
 import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-import { Sidebar, Footer, Navbar } from "./components";
+import { Sidebar, Content, Footer, Navbar } from "./components";
+import "./styles.scss";
 
 const MainLayout: React.FC<IAppChildrenProps> = ({ children }) => (
   <div className="app">
     <Sidebar />
     <div className="app__content">
       <Navbar />
-      <div className="app__main-content">{children}</div>
+      <Content>{children}</Content>
     </div>
     <Footer />
   </div>

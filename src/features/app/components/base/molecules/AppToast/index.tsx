@@ -3,11 +3,10 @@
 import React, { useEffect } from "react";
 
 import { AppImage, AppText } from "@/features/app/components";
-// Custom hooks
 import { useAppSelector, useToast } from "@/features/app/hooks";
 
-// CVA
 import { toast } from "./cva";
+import "./styles.scss";
 
 const AppToast: React.FC = () => {
   const { description, title, show, type } = useAppSelector(
@@ -45,7 +44,7 @@ const AppToast: React.FC = () => {
           </div>
           <AppImage
             onClick={onClose}
-            src="/svg/icon-close-16x16.svg"
+            src="/svg/icon-close.svg"
             className="toast__close"
             alt="Toast"
             height={16}

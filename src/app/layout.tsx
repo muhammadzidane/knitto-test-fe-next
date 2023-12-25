@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import "@/assets/styles/sass/_index.scss";
+import "@/assets/styles/sass/index.scss";
 
 import { ProtectedAuth } from "@/features/app/components";
 import { type IAppChildrenProps } from "@/features/app/interfaces";

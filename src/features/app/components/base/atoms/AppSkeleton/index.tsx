@@ -1,6 +1,7 @@
 "use client";
 
 import { type IAppSkeletonProps, skeleton } from "./cva";
+import "./styles.scss";
 
 const AppSkeleton: React.FC<IAppSkeletonProps> = ({
   height = "20px",

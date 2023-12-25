@@ -3,7 +3,7 @@ import { AppImage, AppText } from "@/features/app/components";
 const Filter: React.FC = () => (
   <div className="d-flex justify-between px-2 mb-5">
     <AppImage
-      src="/svg/icon-search-deactive-16x16.svg"
+      src="/svg/icon-search-deactive.svg"
       alt="Deactive Search"
       height={16}
       width={16}
@@ -14,7 +14,7 @@ const Filter: React.FC = () => (
         Recents
       </AppText>
       <AppImage
-        src="/svg/icon-arrow-drop-down-16x16.svg"
+        src="/svg/icon-arrow-drop-down.svg"
         alt="Arrow Down"
         height={16}
         width={16}

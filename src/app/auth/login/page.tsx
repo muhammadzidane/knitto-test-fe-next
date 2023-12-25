@@ -3,6 +3,7 @@
 import { AuthLayout } from "@/features/app/components";
 
 import { LoginSosmed, LoginForm, SignUp } from "./components";
+import "./styles.scss";
 
 const AuthLogin: React.FC = () => (
   <AuthLayout>

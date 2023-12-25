@@ -1,0 +1,99 @@
+$footer-height: 72px;
+
+.app {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  height: 100vh;
+  background-color: var(--dark-2-color);
+  color: var(--white-1-color);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    height: 64px;
+    background-color: var(--dark-3-color);
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 330px;
+    height: calc(100vh - 10px);
+  }
+
+  &__main-content {
+    flex: 1;
+    background-color: var(--white-1-color);
+  }
+
+  &__footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: $footer-height;
+    background-color: var(--dark-2-color);
+  }
+}
+
+.sidebar {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--dark-3-color);
+    padding: 20px;
+    border-radius: 6px;
+    height: 112px;
+  }
+
+  &__content {
+    @extend .sidebar__header;
+    padding: 10px;
+    height: calc(100%);
+  }
+
+  &__playlists {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: auto;
+    height: calc(100% - 170px);
+  }
+}
+
+.playtime {
+  content: "";
+  position: relative;
+  width: 480px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--dark-4-color);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 480px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--white-1-color);
+    left: -80px;
+  }
+}
+
+.volume {
+  @extend .playtime;
+  width: 93px;
+}

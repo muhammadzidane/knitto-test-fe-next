@@ -1,7 +1,7 @@
 import { AppText } from "@/features/app/components";
 
-// CVA
 import { type IAppInputProps, input } from "./cva";
+import "./styles.scss";
 
 /**
  * Base input component

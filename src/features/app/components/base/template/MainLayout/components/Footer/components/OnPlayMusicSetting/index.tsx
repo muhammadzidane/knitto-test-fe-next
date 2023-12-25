@@ -4,7 +4,7 @@ import React from "react";
 
 const OnPlayMusicSetting: React.FC = () => (
   <div className="d-flex align-center">
-    {/* <ReactSVG src="icon-volume-16x16" /> */}
+    {/* <ReactSVG src="icon-volume-" /> */}
     <div className="volume"></div>
   </div>
 );
