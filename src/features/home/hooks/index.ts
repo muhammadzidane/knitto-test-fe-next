@@ -1,7 +1,11 @@
 // RTK
-import { useLazyHomePlaylistsQuery } from "../redux/rtk";
+import {
+  useLazyHomeCurrentPlaylistsQuery,
+  useLazyHomePlaylistsQuery,
+} from "../redux/rtk";
 
 export const useHome = () => {
+  // Playlist
   const [
     homePlaylists,
     {
@@ -11,11 +15,24 @@ export const useHome = () => {
     },
   ] = useLazyHomePlaylistsQuery();
 
+  // Current Playlist
+  const [
+    homeCurrentPlaylists,
+    {
+      isFetching: homeCurrentPlaylistsIsFetching,
+      isLoading: homeCurrentPlaylistsIsLoading,
+      data: homeCurrentPlaylistsData,
+    },
+  ] = useLazyHomeCurrentPlaylistsQuery();
+
   return {
+    homeCurrentPlaylistsIsFetching,
+    homeCurrentPlaylistsIsLoading,
+    homeCurrentPlaylistsData,
     homePlaylistsIsFetching,
     homePlaylistsIsLoading,
+    homeCurrentPlaylists,
     homePlaylistsData,
-    // Home Playlists
     homePlaylists,
   };
 };

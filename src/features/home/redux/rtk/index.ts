@@ -6,10 +6,23 @@ import {
 } from "@/features/app/interfaces/api";
 import serviceApi from "@/plugins/redux/service";
 
-import { type IHomePlayListsData } from "../../interfaces";
+import {
+  type IHomeCurrentPlayListsData,
+  type IHomePlayListsData,
+} from "../../interfaces";
 
 export const homeApi = serviceApi.injectEndpoints({
   endpoints: (builder) => ({
+    homeCurrentPlaylists: builder.query<
+      IAppResponse<IHomeCurrentPlayListsData[]>,
+      IAppParams
+    >({
+      query: ({ params }) => ({
+        url: "/home/current-playlists",
+        method: "GET",
+        params,
+      }),
+    }),
     homePlaylists: builder.query<
       IAppResponse<IHomePlayListsData[]>,
       IAppParams
@@ -24,4 +37,5 @@ export const homeApi = serviceApi.injectEndpoints({
   overrideExisting: false,
 });
 
-export const { useLazyHomePlaylistsQuery } = homeApi;
+export const { useLazyHomeCurrentPlaylistsQuery, useLazyHomePlaylistsQuery } =
+  homeApi;

@@ -23,6 +23,9 @@ export const text = cva("text", {
     },
     size: {
       "2xlarge": ["text--2xlarge"],
+      "3xlarge": ["text--3xlarge"],
+      "4xlarge": ["text--4xlarge"],
+      "5xlarge": ["text--5xlarge"],
       medium: ["text--medium"],
       xlarge: ["text--xlarge"],
       xsmall: ["text--xsmall"],
@@ -61,7 +64,16 @@ export interface IAppTextProps extends VariantProps<typeof text> {
   /**
    * Size of the text
    */
-  size?: "2xlarge" | "medium" | "xlarge" | "xsmall" | "large" | "small";
+  size?:
+    | "5xlarge"
+    | "4xlarge"
+    | "3xlarge"
+    | "2xlarge"
+    | "medium"
+    | "xlarge"
+    | "xsmall"
+    | "large"
+    | "small";
 
   /**
    * Weight of the text

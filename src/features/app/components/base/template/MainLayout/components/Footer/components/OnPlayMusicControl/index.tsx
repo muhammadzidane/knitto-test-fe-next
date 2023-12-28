@@ -3,7 +3,7 @@ import { AppButton, AppImage, AppText } from "@/features/app/components";
 const OnPlayMusicControl: React.FC = () => {
   return (
     <div className="d-flex flex-column align-center">
-      <div className="d-flex align-center gap-7">
+      <div className="d-flex align-center gap-7 mb-2">
         <AppButton variant="plain">
           <AppImage
             src="/svg/icon-shuffle.svg"

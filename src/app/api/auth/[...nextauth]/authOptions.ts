@@ -5,7 +5,7 @@ export const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
-        const baseUrl = process.env.NEXT_PUBLIC_MOCK_APIARY_API;
+        const baseUrl = process.env.NEXT_PUBLIC_MOCK_POSTMAN_API;
         const response = await fetch(`${baseUrl}/auth/login`, {
           body: JSON.stringify({
             password: credentials?.password,
