@@ -9,16 +9,22 @@ const ListMusic: React.FC<IListMusicProps> = ({ artists, title, img }) => (
   <div className="list-music">
     <div>
       <AppImage
+        style={{ objectFit: "contain", height: "170px", width: "100%" }}
         className="mb-2"
-        height={170}
-        width={170}
-        alt="title"
+        sizes="100vw"
+        alt={title}
+        height={0}
+        width={0}
         src={img}
       />
     </div>
     <div>
-      <AppText>{title}</AppText>
-      <AppText>{artists}</AppText>
+      <AppText className="mb-1" weight="bold">
+        {title}
+      </AppText>
+      <AppText weight="semibold" color="gray-3">
+        {artists}
+      </AppText>
     </div>
   </div>
 );

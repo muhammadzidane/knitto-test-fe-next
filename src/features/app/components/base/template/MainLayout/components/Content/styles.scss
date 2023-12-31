@@ -1,5 +1,7 @@
 .app__main-content {
-  flex: 1;
+  flex-basis: calc(100% - 146px);
   padding: 0 24px;
   background-color: var(--dark-3-color);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

@@ -7,7 +7,7 @@ import {
 } from "./components";
 import "./styles.scss";
 
-const Footer: React.FC = () => (
+const CurrentlyPlaying: React.FC = () => (
   <div className="app__footer">
     <div className="d-flex justify-between align-center h-full px-3">
       <OnPlayMusicInfo />
@@ -17,4 +17,4 @@ const Footer: React.FC = () => (
   </div>
 );
 
-export default Footer;
+export default CurrentlyPlaying;

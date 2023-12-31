@@ -1,7 +1,12 @@
 .list-music {
+  cursor: pointer;
   width: auto;
   height: 258px;
   padding: 12px;
   border-radius: 8px;
-  background-color: red;
+  background-color: var(--dark-1-color);
+
+  &:hover {
+    background-color: var(--gray-5-color);
+  }
 }

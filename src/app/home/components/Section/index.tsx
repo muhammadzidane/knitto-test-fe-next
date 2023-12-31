@@ -2,9 +2,9 @@ import React from "react";
 
 import { AppButton, AppText } from "@/features/app/components";
 
-import { type ISectionContentProps } from "./interfaces";
+import { type ISectionProps } from "./interfaces";
 
-const SectionContent: React.FC<ISectionContentProps> = ({
+const Section: React.FC<ISectionProps> = ({
   onClickShowAll,
   children,
   showAll,
@@ -37,4 +37,4 @@ const SectionContent: React.FC<ISectionContentProps> = ({
   </div>
 );
 
-export default SectionContent;
+export default Section;

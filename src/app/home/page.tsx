@@ -5,7 +5,7 @@ import { useCallback, useEffect } from "react";
 import { MainLayout } from "@/features/app/components";
 import { useHome } from "@/features/home/hooks";
 
-import { SectionContent, LatestPlayed, ListMusic } from "./components";
+import { LatestPlayed, ListMusic, Section } from "./components";
 import "./styles.scss";
 
 const Home: React.FC = () => {
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     <MainLayout>
       <div className="d-flex flex-column gap-8">
         {/* My Playlist */}
-        <SectionContent title="Good Afternoon">
+        <Section title="Good Afternoon">
           <div className="my-playlist">
             {homeCurrentPlaylistsData?.data.map((currentPlaylist) => (
               <LatestPlayed
@@ -43,10 +43,10 @@ const Home: React.FC = () => {
               />
             ))}
           </div>
-        </SectionContent>
+        </Section>
 
         {/* Made For You */}
-        <SectionContent
+        <Section
           onClickShowAll={onClickShowAllContentForYou}
           title="Made For Muhammad Zidane"
           showAll
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
               />
             ))}
           </div>
-        </SectionContent>
+        </Section>
       </div>
     </MainLayout>
   );

@@ -2,7 +2,7 @@
 
 import { type IAppChildrenProps } from "@/features/app/interfaces";
 
-import { Sidebar, Content, Footer, Navbar } from "./components";
+import { CurrentlyPlaying, Sidebar, Content, Navbar } from "./components";
 import "./styles.scss";
 
 const MainLayout: React.FC<IAppChildrenProps> = ({ children }) => (
@@ -12,7 +12,7 @@ const MainLayout: React.FC<IAppChildrenProps> = ({ children }) => (
       <Navbar />
       <Content>{children}</Content>
     </div>
-    <Footer />
+    <CurrentlyPlaying />
   </div>
 );
 
