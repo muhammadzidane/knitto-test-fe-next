@@ -5,12 +5,18 @@ import { useCallback, useEffect } from "react";
 import { MainLayout } from "@/features/app/components";
 import { useHome } from "@/features/home/hooks";
 
-import { LatestPlayed, ListMusic, Section } from "./components";
+import {
+  LatestPlayedLoading,
+  ListMusicLoading,
+  LatestPlayed,
+  ListMusic,
+  Section,
+} from "./components";
 import "./styles.scss";
 
 const Home: React.FC = () => {
   const {
-    // homeCurrentPlaylistsIsLoading,
+    homeCurrentPlaylistsIsLoading,
     homeCurrentPlaylistsData,
     homeCurrentPlaylists,
   } = useHome();
@@ -35,6 +41,7 @@ const Home: React.FC = () => {
         {/* My Playlist */}
         <Section title="Good Afternoon">
           <div className="my-playlist">
+            {homeCurrentPlaylistsIsLoading && <LatestPlayedLoading />}
             {homeCurrentPlaylistsData?.data.map((currentPlaylist) => (
               <LatestPlayed
                 title={currentPlaylist.title}
@@ -48,10 +55,12 @@ const Home: React.FC = () => {
         {/* Made For You */}
         <Section
           onClickShowAll={onClickShowAllContentForYou}
+          loading={homeCurrentPlaylistsIsLoading}
           title="Made For Muhammad Zidane"
           showAll
         >
           <div className="for-you">
+            {homeCurrentPlaylistsIsLoading && <ListMusicLoading />}
             {homeCurrentPlaylistsData?.data.map((currentPlaylist) => (
               <ListMusic
                 artists={currentPlaylist.artist}
