@@ -15,7 +15,7 @@ import {
 import storage from "redux-persist/lib/storage";
 
 // API
-import { authApi } from "@/features/auth/redux/rtk";
+import { todoApi } from "@/features/todo/redux/rtk";
 
 // Reducers
 import { reducers } from "./combineReducer";
@@ -24,7 +24,7 @@ import { rtkQueryErrorLoggerMiddleware } from "./middleware";
 
 // Config for Redux Persist
 const persistConfig = {
-  whitelist: ["auth"],
+  whitelist: ["todo"],
   key: "root",
   version: 1,
   storage,
@@ -44,7 +44,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
       immutableCheck: false,
-    }).concat(rtkQueryErrorLoggerMiddleware, authApi.middleware),
+    }).concat(rtkQueryErrorLoggerMiddleware, todoApi.middleware),
   reducer: persistedReducer,
   // preloadedState,
 });

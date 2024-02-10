@@ -8,15 +8,14 @@
     "standard-with-typescript",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:perfectionist/recommended-line-length"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "perfectionist"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "rules": {
     "no-unused-vars": "off",
     "no-underscore-dangle": [
@@ -46,47 +45,7 @@
         "checksVoidReturn": false
       }
     ],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "perfectionist/sort-imports": [
-      "error",
-      {
-        "groups": [
-          "react",
-          "type",
-          "next",
-          ["builtin", "external"],
-          "internal-type",
-          "internal",
-          ["parent-type", "sibling-type", "index-type"],
-          ["parent", "sibling", "index"],
-          "object",
-          "unknown"
-        ],
-        "custom-groups": {
-          "value": {
-            "react": ["react"]
-          },
-          "type": {
-            "react": "react"
-          }
-        },
-        "internal-pattern": [
-          "@/features/**",
-          "@/plugins/**"
-        ]
-      }
-    ],
-    "perfectionist/sort-jsx-props": [
-      "error",
-      {
-        "type": "line-length",
-        "order": "desc",
-        "groups": ["callback"],
-        "custom-groups": {
-          "callback": "on*"
-        }
-      }
-    ]
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
   },
   "ignorePatterns": ["next.config.js", "coverage"],
   "root": true

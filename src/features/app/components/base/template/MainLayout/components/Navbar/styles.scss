@@ -1,8 +1,6 @@
-.app__navbar {
+.login__navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  height: 64px;
-  background-color: var(--dark-3-color);
+  padding: 24px 0;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray-1-color);
 }

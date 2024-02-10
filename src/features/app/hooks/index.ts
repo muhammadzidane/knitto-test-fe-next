@@ -1,3 +1,3 @@
 export * from "./popup";
 export * from "./redux";
-export * from "./modal";
+export * from "./table";

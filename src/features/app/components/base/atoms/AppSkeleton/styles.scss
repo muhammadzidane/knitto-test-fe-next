@@ -1,11 +1,11 @@
 // Variabel
-$skeleton-primary-color: rgb(179, 179, 179, 0.2);
+$skeleton-primary-color: rgb(179, 179, 179, 0.6);
 $skeleton-animation-duration: 1s;
 $skeleton-animation-easing: ease-in-out;
 
 .skeleton {
   overflow-x: hidden;
-  background-color: var(--gray-5-color);
+  background-color: var(--gray-1-color);
 
   &__list {
     background-color: $skeleton-primary-color;

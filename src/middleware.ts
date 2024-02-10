@@ -1,12 +1,12 @@
-import { withAuth } from "next-auth/middleware";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default withAuth(function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith("/")) {
-    return NextResponse.rewrite(new URL("/home", request.url));
-  }
+// This function can be marked `async` if using `await` inside
+export function middleware(request: NextRequest) {
+  return NextResponse.redirect(new URL("/todo", request.url));
+}
 
-  return NextResponse.next();
-});
-
-export const config = { matcher: ["/", "/home"] };
+// See "Matching Paths" below to learn more
+export const config = {
+  matcher: ["/"],
+};

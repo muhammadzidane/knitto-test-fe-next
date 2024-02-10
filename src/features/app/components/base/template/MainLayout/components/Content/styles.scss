@@ -1,7 +1,16 @@
-.app__main-content {
-  flex-basis: calc(100% - 146px);
-  padding: 0 24px;
-  background-color: var(--dark-3-color);
-  overflow-x: hidden;
-  overflow-y: scroll;
+.login__content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 0 10px;
+
+  &-inner {
+    display: flex;
+    gap: 16px;
+    padding-top: 28px;
+    padding-bottom: 8px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+  }
 }

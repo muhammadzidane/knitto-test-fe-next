@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import "@/assets/styles/sass/index.scss";
 
-import { ProtectedAuth } from "@/features/app/components";
 import { type IAppChildrenProps } from "@/features/app/interfaces";
 import NextAuthProvider from "@/plugins/next-auth";
 import ReduxProvider from "@/plugins/redux/provider";
@@ -15,9 +14,7 @@ const RootLayout = ({ children }: IAppChildrenProps) => (
   <html lang="en">
     <body>
       <ReduxProvider>
-        <NextAuthProvider>
-          <ProtectedAuth>{children}</ProtectedAuth>
-        </NextAuthProvider>
+        <NextAuthProvider>{children}</NextAuthProvider>
       </ReduxProvider>
     </body>
   </html>
