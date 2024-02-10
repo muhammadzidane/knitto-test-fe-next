@@ -5,7 +5,7 @@ import React from "react";
 import { AppButton, AppSelect, AppText } from "@/features/app/components";
 
 export interface IPaginationProps {
-  onChangeLimit: (value: number) => void;
+  onChangeLimit: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   onClickPrev: () => void;
   onClickNext: () => void;
   currentPage: number;

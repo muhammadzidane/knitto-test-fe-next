@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export interface IPaginationHook {
-  changeLimit: (value: number) => void;
+  changeLimit: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   nextPage: () => void;
   prevPage: () => void;
   currentLimit: number;
@@ -20,7 +20,8 @@ export const usePagination = (): IPaginationHook => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
   };
 
-  const changeLimit = (value: number) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const changeLimit = (value: any) => {
     setCurrentLimit(value);
   };
 
